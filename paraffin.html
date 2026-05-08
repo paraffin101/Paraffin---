@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Paraffin – প্যারাফিন | Question Bank & Exam Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Sans+Bengali:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+:root {
+  --primary:#0b2545;--primary-light:#1a3a63;--primary-soft:#e8eef7;
+  --accent:#c9912a;--accent-light:#f0b93a;--accent-soft:#fdf3e0;
+  --green:#1a5c3a;--green-soft:#e3f2eb;
+  --red:#c0392b;--red-soft:#fde8e6;
+  --bg:#f8f5ef;--surface:#ffffff;--surface2:#f1eee8;
+  --text:#1a1a2e;--text-muted:#6b6b6b;--text-light:#9b9b9b;
+  --border:#e2ddd6;--border-light:#f0ece4;
+  --shadow:0 2px 12px rgba(11,37,69,.08);
+  --shadow-lg:0 8px 32px rgba(11,37,69,.14);
+  --radius:10px;--radius-lg:16px;--radius-xl:24px;
+  --font-display:'Playfair Display',serif;
+  --font-body:'Noto Sans Bengali','DM Sans',sans-serif;
+  --font-mono:'JetBrains Mono',monospace;
+  --nav-h:68px;
+}
+[data-theme=dark] {
+  --bg:#0d1117;--surface:#161b22;--surface2:#1c2333;
+  --text:#e8e4d0;--text-muted:#a0a0a0;--text-light:#666;
+  --border:#2d3748;--border-light:#253046;
+  --primary-soft:#162032;--accent-soft:#2a2010;
+  --green-soft:#122419;--red-soft:#2a1015;
+  --shadow:0 2px 12px rgba(0,0,0,.3);--shadow-lg:0 8px 32px rgba(0,0,0,.45);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.6;transition:background .3s,color .3s;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+button{cursor:pointer;font-family:var(--font-body);border:none;outline:none;}
+img{max-width:100%;height:auto;}
+input,textarea,select{font-family:var(--font-body);}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+
+/* ── NAV ── */
+.nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--surface);border-bottom:1px solid var(--border);z-index:1000;display:flex;align-items:center;padding:0 32px;gap:16px;transition:background .3s,border .3s;}
+.nav-logo{display:flex;align-items:center;gap:10px;cursor:pointer;}
+.nav-logo-icon{width:38px;height:38px;background:var(--primary);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:#c9912a;font-family:var(--font-mono);}
+.nav-logo-text{line-height:1.2;}
+.nav-logo-en{font-family:var(--font-display);font-size:17px;font-weight:700;color:var(--primary);}
+[data-theme=dark] .nav-logo-en{color:#e8e4d0;}
+.nav-logo-bn{font-size:13px;color:var(--accent);font-weight:500;}
+.nav-links{display:flex;align-items:center;gap:4px;margin-left:24px;}
+.nav-link{padding:7px 14px;border-radius:7px;font-size:14px;font-weight:500;color:var(--text-muted);transition:.2s;cursor:pointer;white-space:nowrap;}
+.nav-link:hover,.nav-link.active{background:var(--primary-soft);color:var(--primary);}
+[data-theme=dark] .nav-link:hover,[data-theme=dark] .nav-link.active{background:#1e3a5f;color:#7db8f7;}
+.nav-spacer{flex:1;}
+.nav-actions{display:flex;align-items:center;gap:8px;}
+.btn-icon{width:36px;height:36px;border-radius:8px;background:var(--surface2);color:var(--text-muted);display:flex;align-items:center;justify-content:center;font-size:14px;transition:.2s;cursor:pointer;border:1px solid var(--border);}
+.btn-icon:hover{background:var(--primary);color:#fff;border-color:var(--primary);}
+.lang-btn{padding:6px 12px;border-radius:7px;background:var(--surface2);color:var(--text-muted);font-size:13px;font-weight:600;border:1px solid var(--border);transition:.2s;}
+.lang-btn:hover{background:var(--accent-soft);color:var(--accent);border-color:var(--accent);}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:9px 20px;border-radius:8px;font-size:14px;font-weight:600;transition:.2s;white-space:nowrap;}
+.btn-outline{background:transparent;border:1.5px solid var(--primary);color:var(--primary);}
+.btn-outline:hover{background:var(--primary);color:#fff;}
+[data-theme=dark] .btn-outline{border-color:#4a7fc1;color:#7db8f7;}
+[data-theme=dark] .btn-outline:hover{background:#1e3a5f;color:#e8e4d0;}
+.btn-primary{background:var(--primary);border:1.5px solid var(--primary);color:#fff;}
+.btn-primary:hover{background:var(--primary-light);border-color:var(--primary-light);}
+.btn-accent{background:var(--accent);border:1.5px solid var(--accent);color:#fff;}
+.btn-accent:hover{background:#b07d20;border-color:#b07d20;}
+.btn-green{background:var(--green);border:1.5px solid var(--green);color:#fff;}
+.btn-green:hover{background:#14472d;}
+.btn-sm{padding:6px 14px;font-size:13px;}
+.btn-lg{padding:12px 28px;font-size:16px;border-radius:10px;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;border-radius:6px;}
+.hamburger span{width:22px;height:2px;background:var(--text);border-radius:2px;transition:.3s;}
+.mobile-nav{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:var(--surface);border-bottom:1px solid var(--border);z-index:999;padding:16px 24px;flex-direction:column;gap:6px;}
+.mobile-nav.open{display:flex;}
+
+/* ── LAYOUT ── */
+.page{display:none;min-height:100vh;padding-top:var(--nav-h);}
+.page.active{display:block;}
+.container{max-width:1160px;margin:0 auto;padding:0 24px;}
+.section{padding:80px 0;}
+.section-sm{padding:50px 0;}
+
+/* ── HERO ── */
+.hero{padding:90px 0 70px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-60px;right:-120px;width:500px;height:500px;background:var(--primary);opacity:.04;border-radius:50%;}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-80px;width:320px;height:320px;background:var(--accent);opacity:.05;border-radius:50%;}
+.hero-content{max-width:620px;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:50px;background:var(--accent-soft);color:var(--accent);font-size:13px;font-weight:600;margin-bottom:24px;border:1px solid #f0d898;}
+[data-theme=dark] .hero-badge{background:#2a1f08;border-color:#6b4e1a;}
+.hero h1{font-family:var(--font-display);font-size:clamp(38px,5vw,58px);font-weight:700;line-height:1.18;color:var(--primary);margin-bottom:10px;}
+[data-theme=dark] .hero h1{color:#e8e4d0;}
+.hero h1 span{color:var(--accent);}
+.hero-bn{font-size:clamp(22px,3vw,32px);color:var(--text-muted);font-weight:400;margin-bottom:20px;line-height:1.4;}
+.hero p{font-size:17px;color:var(--text-muted);line-height:1.7;margin-bottom:32px;max-width:540px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.hero-stats{display:flex;gap:32px;margin-top:52px;flex-wrap:wrap;}
+.hero-stat{text-align:center;}
+.hero-stat-num{font-family:var(--font-display);font-size:32px;font-weight:700;color:var(--primary);display:block;}
+[data-theme=dark] .hero-stat-num{color:#c9912a;}
+.hero-stat-label{font-size:13px;color:var(--text-muted);font-weight:500;}
+.hero-visual{position:absolute;right:0;top:50%;transform:translateY(-50%);width:420px;opacity:.08;}
+[data-theme=dark] .hero-visual{opacity:.04;}
+
+/* ── SECTION HEADERS ── */
+.sec-header{text-align:center;margin-bottom:52px;}
+.sec-tag{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:50px;font-size:12px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;margin-bottom:14px;}
+.tag-accent{background:var(--accent-soft);color:var(--accent);}
+.tag-primary{background:var(--primary-soft);color:var(--primary);}
+[data-theme=dark] .tag-primary{background:#162032;color:#7db8f7;}
+.tag-green{background:var(--green-soft);color:var(--green);}
+.sec-title{font-family:var(--font-display);font-size:clamp(28px,3.5vw,40px);font-weight:700;color:var(--primary);margin-bottom:12px;line-height:1.25;}
+[data-theme=dark] .sec-title{color:#e8e4d0;}
+.sec-sub{font-size:16px;color:var(--text-muted);max-width:560px;margin:0 auto;line-height:1.65;}
+
+/* ── CARDS ── */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;transition:transform .2s,box-shadow .2s;}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;}
+.grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;}
+
+/* ── COURSE CARDS ── */
+.course-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:transform .2s,box-shadow .2s;cursor:pointer;}
+.course-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
+.course-thumb{height:150px;display:flex;align-items:center;justify-content:center;font-size:48px;position:relative;}
+.course-body{padding:20px;}
+.course-tag{display:inline-block;padding:3px 10px;border-radius:50px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;}
+.course-title{font-size:16px;font-weight:700;color:var(--primary);margin-bottom:6px;line-height:1.3;}
+[data-theme=dark] .course-title{color:#e8e4d0;}
+.course-meta{display:flex;gap:12px;font-size:12px;color:var(--text-muted);}
+.course-footer{padding:14px 20px;border-top:1px solid var(--border-light);display:flex;align-items:center;justify-content:space-between;}
+.course-price{font-weight:700;color:var(--green);}
+
+/* ── EXAM CATEGORIES ── */
+.exam-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:28px 22px;text-align:center;cursor:pointer;transition:.3s;position:relative;overflow:hidden;}
+.exam-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;}
+.exam-card.hsc::before{background:linear-gradient(90deg,#c9912a,#f0b93a);}
+.exam-card.medical::before{background:linear-gradient(90deg,#e74c3c,#ff6b6b);}
+.exam-card.university::before{background:linear-gradient(90deg,#2980b9,#5dade2);}
+.exam-card.engineering::before{background:linear-gradient(90deg,#27ae60,#52d98d);}
+.exam-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--accent);}
+.exam-icon{font-size:38px;margin-bottom:14px;display:block;}
+.exam-title{font-family:var(--font-display);font-size:20px;font-weight:700;color:var(--primary);margin-bottom:6px;}
+[data-theme=dark] .exam-title{color:#e8e4d0;}
+.exam-count{font-size:13px;color:var(--text-muted);font-weight:500;}
+
+/* ── FEATURES ── */
+.feature-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;}
+.feature-icon{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:18px;}
+.feature-title{font-size:18px;font-weight:700;color:var(--primary);margin-bottom:8px;}
+[data-theme=dark] .feature-title{color:#e8e4d0;}
+.feature-text{font-size:14px;color:var(--text-muted);line-height:1.65;}
+
+/* ── TESTIMONIALS ── */
+.testimonial-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;position:relative;}
+.testimonial-card::before{content:'\201C';font-family:var(--font-display);font-size:80px;color:var(--accent);opacity:.2;position:absolute;top:-8px;left:20px;line-height:1;}
+.testimonial-text{font-size:15px;line-height:1.7;color:var(--text-muted);margin-bottom:20px;margin-top:18px;}
+.testimonial-author{display:flex;align-items:center;gap:12px;}
+.avatar{width:42px;height:42px;border-radius:50%;object-fit:cover;background:var(--primary-soft);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:var(--primary);flex-shrink:0;}
+[data-theme=dark] .avatar{background:#1e3a5f;color:#7db8f7;}
+.author-name{font-size:14px;font-weight:700;color:var(--primary);}
+[data-theme=dark] .author-name{color:#e8e4d0;}
+.author-meta{font-size:12px;color:var(--text-muted);}
+.stars{color:#f0b93a;font-size:12px;margin-bottom:2px;}
+
+/* ── FOUNDER ── */
+.founder-section{background:var(--primary);color:#fff;padding:80px 0;position:relative;overflow:hidden;}
+.founder-section::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;border:1px solid rgba(201,145,42,.2);border-radius:50%;}
+.founder-section::after{content:'';position:absolute;bottom:-80px;left:-60px;width:280px;height:280px;background:rgba(201,145,42,.07);border-radius:50%;}
+.founder-grid{display:grid;grid-template-columns:220px 1fr;gap:56px;align-items:center;position:relative;z-index:1;}
+.founder-img-wrap{text-align:center;}
+.founder-avatar{width:180px;height:180px;border-radius:50%;margin:0 auto 16px;background:rgba(255,255,255,.1);border:3px solid var(--accent);display:flex;align-items:center;justify-content:center;font-size:64px;overflow:hidden;}
+.founder-name{font-family:var(--font-display);font-size:18px;font-weight:700;color:#fff;}
+.founder-title{font-size:13px;color:rgba(255,255,255,.6);margin-top:4px;}
+.founder-content .sec-title{color:#fff;text-align:left;margin-bottom:16px;}
+.founder-bio{font-size:15.5px;line-height:1.8;color:rgba(255,255,255,.75);margin-bottom:24px;}
+.founder-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(201,145,42,.15);border:1px solid rgba(201,145,42,.3);color:var(--accent-light);padding:7px 16px;border-radius:50px;font-size:13px;font-weight:600;}
+
+/* ── CONTACT ── */
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:start;}
+.contact-info{display:flex;flex-direction:column;gap:20px;}
+.contact-item{display:flex;align-items:flex-start;gap:14px;}
+.contact-icon{width:42px;height:42px;border-radius:10px;background:var(--primary-soft);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+[data-theme=dark] .contact-icon{background:#1e3a5f;color:#7db8f7;}
+.contact-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--text-muted);margin-bottom:3px;}
+.contact-value{font-size:15px;color:var(--text);font-weight:500;}
+.social-icons{display:flex;gap:10px;margin-top:8px;}
+.social-icon{width:38px;height:38px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--text-muted);transition:.2s;cursor:pointer;}
+.social-icon:hover{background:var(--primary);color:#fff;border-color:var(--primary);}
+.contact-form{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;}
+.form-group{margin-bottom:18px;}
+.form-label{display:block;font-size:13px;font-weight:600;color:var(--text);margin-bottom:7px;}
+.form-input,.form-textarea{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font-size:14px;transition:.2s;font-family:var(--font-body);}
+.form-input:focus,.form-textarea:focus{outline:none;border-color:var(--primary);background:var(--surface);}
+.form-textarea{resize:vertical;min-height:110px;}
+[data-theme=dark] .form-input,[data-theme=dark] .form-textarea{background:var(--surface2);border-color:var(--border);}
+
+/* ── FOOTER ── */
+footer{background:var(--primary);color:rgba(255,255,255,.8);padding:52px 0 28px;}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+.footer-brand .nav-logo-en{color:#fff;font-size:19px;}
+.footer-brand .nav-logo-bn{color:var(--accent-light);}
+.footer-desc{font-size:14px;line-height:1.7;margin-top:12px;opacity:.7;max-width:220px;}
+.footer-heading{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:#fff;margin-bottom:16px;}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.footer-links a{font-size:14px;opacity:.7;transition:.2s;cursor:pointer;}
+.footer-links a:hover{opacity:1;color:#fff;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;display:flex;align-items:center;justify-content:space-between;font-size:13px;opacity:.6;}
+
+/* ── MODAL ── */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:2000;display:none;align-items:center;justify-content:center;padding:20px;}
+.modal-overlay.open{display:flex;}
+.modal{background:var(--surface);border-radius:var(--radius-xl);width:100%;max-width:500px;max-height:90vh;overflow-y:auto;box-shadow:0 24px 64px rgba(0,0,0,.2);position:relative;animation:modalIn .25s ease;}
+@keyframes modalIn{from{opacity:0;transform:scale(.94) translateY(10px);}to{opacity:1;transform:scale(1) translateY(0);}}
+.modal-header{padding:28px 28px 0;display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;}
+.modal-close{width:32px;height:32px;border-radius:8px;background:var(--surface2);color:var(--text-muted);display:flex;align-items:center;justify-content:center;font-size:14px;cursor:pointer;flex-shrink:0;margin-top:2px;border:1px solid var(--border);transition:.2s;}
+.modal-close:hover{background:var(--red-soft);color:var(--red);}
+.modal-body{padding:20px 28px 28px;}
+.modal-title{font-family:var(--font-display);font-size:26px;font-weight:700;color:var(--primary);}
+[data-theme=dark] .modal-title{color:#e8e4d0;}
+.modal-sub{font-size:14px;color:var(--text-muted);margin-top:4px;}
+.tabs{display:flex;gap:4px;background:var(--surface2);border-radius:10px;padding:4px;margin-bottom:24px;border:1px solid var(--border);}
+.tab{flex:1;text-align:center;padding:9px;border-radius:7px;font-size:14px;font-weight:600;cursor:pointer;transition:.2s;color:var(--text-muted);}
+.tab.active{background:var(--surface);color:var(--primary);box-shadow:var(--shadow);}
+[data-theme=dark] .tab.active{background:var(--surface);color:#7db8f7;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.form-note{font-size:12px;color:var(--text-muted);margin-top:18px;text-align:center;}
+.form-note a{color:var(--accent);cursor:pointer;font-weight:600;}
+.form-note a:hover{text-decoration:underline;}
+.divider{height:1px;background:var(--border);margin:20px 0;position:relative;}
+.divider::after{content:'or';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--surface);padding:0 10px;font-size:12px;color:var(--text-muted);}
+
+/* ── DASHBOARD ── */
+.dashboard{display:grid;grid-template-columns:240px 1fr;min-height:calc(100vh - var(--nav-h));background:var(--bg);}
+.sidebar{background:var(--surface);border-right:1px solid var(--border);padding:24px 16px;position:sticky;top:var(--nav-h);height:calc(100vh - var(--nav-h));overflow-y:auto;}
+.sidebar-user{display:flex;align-items:center;gap:12px;padding:14px;border-radius:var(--radius);background:var(--primary-soft);margin-bottom:24px;}
+[data-theme=dark] .sidebar-user{background:#162032;}
+.sidebar-avatar{width:44px;height:44px;border-radius:50%;background:var(--primary);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:16px;flex-shrink:0;}
+.sidebar-name{font-size:14px;font-weight:700;color:var(--primary);}
+[data-theme=dark] .sidebar-name{color:#e8e4d0;}
+.sidebar-role{font-size:11px;color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
+.sidebar-menu{list-style:none;display:flex;flex-direction:column;gap:2px;}
+.sidebar-item{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;font-size:14px;font-weight:500;color:var(--text-muted);cursor:pointer;transition:.2s;}
+.sidebar-item:hover,.sidebar-item.active{background:var(--primary-soft);color:var(--primary);}
+[data-theme=dark] .sidebar-item:hover,[data-theme=dark] .sidebar-item.active{background:#1e3a5f;color:#7db8f7;}
+.sidebar-item i{width:18px;text-align:center;font-size:14px;}
+.sidebar-divider{height:1px;background:var(--border);margin:12px 0;}
+.dash-main{padding:32px;}
+.dash-header{margin-bottom:28px;}
+.dash-title{font-family:var(--font-display);font-size:28px;font-weight:700;color:var(--primary);}
+[data-theme=dark] .dash-title{color:#e8e4d0;}
+.dash-sub{font-size:14px;color:var(--text-muted);margin-top:4px;}
+.stat-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-bottom:28px;}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px;text-align:center;}
+.stat-num{font-family:var(--font-display);font-size:32px;font-weight:700;color:var(--primary);}
+[data-theme=dark] .stat-num{color:#c9912a;}
+.stat-label{font-size:12px;color:var(--text-muted);margin-top:4px;font-weight:500;}
+.dash-section{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;margin-bottom:24px;}
+.dash-section-title{font-size:16px;font-weight:700;color:var(--primary);margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+[data-theme=dark] .dash-section-title{color:#e8e4d0;}
+
+/* ── QUESTION FORM ── */
+.q-form{display:flex;flex-direction:column;gap:14px;}
+.form-select{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font-size:14px;appearance:none;font-family:var(--font-body);}
+[data-theme=dark] .form-select{background:var(--surface2);}
+.form-select:focus{outline:none;border-color:var(--primary);}
+.form-2col{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.char-count{font-size:11px;color:var(--text-muted);text-align:right;margin-top:3px;}
+.q-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:50px;font-size:11px;font-weight:700;}
+.badge-approved{background:#e3f2eb;color:#1a5c3a;}
+.badge-pending{background:#fdf3e0;color:#c9912a;}
+.badge-rejected{background:#fde8e6;color:#c0392b;}
+[data-theme=dark] .badge-approved{background:#122419;}
+[data-theme=dark] .badge-pending{background:#2a1f08;}
+[data-theme=dark] .badge-rejected{background:#2a1015;}
+
+/* ── QUESTION BANK PAGE ── */
+.qb-filters{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 24px;margin-bottom:24px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
+.qb-filters select,.qb-search{padding:9px 14px;border:1.5px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font-size:14px;font-family:var(--font-body);}
+.qb-search{flex:1;min-width:200px;}
+.qb-search:focus,.qb-filters select:focus{outline:none;border-color:var(--primary);}
+[data-theme=dark] .qb-search,[data-theme=dark] .qb-filters select{background:var(--surface2);}
+.q-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px;margin-bottom:14px;position:relative;}
+.q-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:14px;}
+.q-meta{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px;}
+.q-tag{padding:3px 9px;border-radius:50px;font-size:11px;font-weight:600;background:var(--primary-soft);color:var(--primary);}
+[data-theme=dark] .q-tag{background:#1e3a5f;color:#7db8f7;}
+.q-text{font-size:15px;color:var(--text);line-height:1.65;margin-bottom:14px;}
+.q-options{display:flex;flex-direction:column;gap:7px;}
+.q-option{padding:9px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;cursor:pointer;transition:.2s;}
+.q-option:hover{border-color:var(--primary);background:var(--primary-soft);}
+.q-option.correct{border-color:var(--green);background:var(--green-soft);color:var(--green);}
+.q-option.wrong{border-color:var(--red);background:var(--red-soft);color:var(--red);}
+[data-theme=dark] .q-option:hover{background:#1e3a5f;}
+.q-explanation{margin-top:14px;padding:14px;background:var(--accent-soft);border-radius:8px;border-left:3px solid var(--accent);font-size:13.5px;color:var(--text-muted);line-height:1.65;display:none;}
+.q-explanation.show{display:block;}
+.q-actions{display:flex;gap:8px;margin-top:14px;}
+.q-report{position:absolute;top:14px;right:14px;font-size:11px;color:var(--text-muted);cursor:pointer;transition:.2s;}
+.q-report:hover{color:var(--red);}
+
+/* ── EXAM PAGE ── */
+.exam-ui{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-xl);overflow:hidden;max-width:800px;margin:0 auto;}
+.exam-topbar{background:var(--primary);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;color:#fff;}
+.exam-name{font-family:var(--font-display);font-size:18px;font-weight:700;}
+.exam-timer{font-family:var(--font-mono);font-size:22px;font-weight:700;color:var(--accent-light);background:rgba(255,255,255,.1);padding:6px 16px;border-radius:8px;}
+.exam-progress{background:var(--border);height:5px;}
+.exam-progress-bar{height:100%;background:var(--accent);transition:width .3s;}
+.exam-body{padding:28px;}
+.exam-q-num{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--text-muted);margin-bottom:10px;}
+.exam-q-text{font-size:17px;font-weight:600;color:var(--text);line-height:1.55;margin-bottom:22px;}
+.exam-options{display:flex;flex-direction:column;gap:10px;}
+.exam-option{padding:14px 18px;border:2px solid var(--border);border-radius:10px;cursor:pointer;transition:.2s;display:flex;align-items:center;gap:12px;font-size:15px;}
+.exam-option:hover{border-color:var(--primary);background:var(--primary-soft);}
+.exam-option.selected{border-color:var(--primary);background:var(--primary-soft);color:var(--primary);}
+[data-theme=dark] .exam-option:hover,[data-theme=dark] .exam-option.selected{background:#1e3a5f;}
+.exam-opt-letter{width:28px;height:28px;border-radius:50%;border:2px solid currentColor;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;}
+.exam-footer{padding:20px 28px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
+.exam-nav-btns{display:flex;gap:10px;}
+.exam-result{padding:48px;text-align:center;}
+.result-circle{width:130px;height:130px;border-radius:50%;margin:0 auto 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:5px solid var(--green);}
+.result-percent{font-family:var(--font-display);font-size:38px;font-weight:700;color:var(--green);}
+.result-label{font-size:12px;color:var(--text-muted);}
+.result-title{font-family:var(--font-display);font-size:26px;font-weight:700;color:var(--primary);margin-bottom:8px;}
+[data-theme=dark] .result-title{color:#e8e4d0;}
+.result-stats{display:flex;gap:28px;justify-content:center;margin:24px 0;}
+.result-stat{text-align:center;}
+.result-stat-num{font-size:24px;font-weight:700;}
+.result-stat-label{font-size:12px;color:var(--text-muted);}
+
+/* ── COURSES PAGE ── */
+.courses-hero{background:var(--primary);padding:52px 0;text-align:center;color:#fff;}
+.courses-hero h2{font-family:var(--font-display);font-size:36px;font-weight:700;margin-bottom:8px;}
+.courses-hero p{opacity:.75;font-size:16px;}
+.filter-bar{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px 20px;margin-bottom:28px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;}
+.filter-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--text-muted);margin-right:4px;}
+.filter-chip{padding:6px 14px;border-radius:50px;border:1.5px solid var(--border);font-size:13px;font-weight:500;color:var(--text-muted);cursor:pointer;transition:.2s;background:transparent;}
+.filter-chip:hover,.filter-chip.active{border-color:var(--primary);background:var(--primary-soft);color:var(--primary);}
+[data-theme=dark] .filter-chip:hover,[data-theme=dark] .filter-chip.active{background:#1e3a5f;color:#7db8f7;}
+
+/* ── PROFILE ── */
+.profile-header{background:var(--primary);padding:40px 0 60px;text-align:center;color:#fff;}
+.profile-avatar-lg{width:100px;height:100px;border-radius:50%;border:4px solid rgba(255,255,255,.3);margin:0 auto 14px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:700;}
+.profile-name-lg{font-family:var(--font-display);font-size:26px;font-weight:700;}
+.profile-role-lg{font-size:14px;opacity:.7;margin-top:5px;}
+.profile-body{padding:32px;max-width:700px;margin:0 auto;}
+.profile-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.profile-field{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;}
+.profile-field-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:4px;}
+.profile-field-value{font-size:15px;font-weight:600;color:var(--text);}
+
+/* ── NOTIFICATIONS ── */
+.notif-dot{width:8px;height:8px;background:var(--red);border-radius:50%;position:absolute;top:6px;right:6px;}
+.toast{position:fixed;bottom:24px;right:24px;background:var(--primary);color:#fff;padding:14px 20px;border-radius:var(--radius);box-shadow:var(--shadow-lg);font-size:14px;font-weight:500;z-index:3000;display:flex;align-items:center;gap:10px;transform:translateY(80px);opacity:0;transition:.35s;max-width:320px;}
+.toast.show{transform:translateY(0);opacity:1;}
+.toast.success{background:var(--green);}
+.toast.error{background:var(--red);}
+
+/* ── UTILS ── */
+.text-center{text-align:center;}
+.text-accent{color:var(--accent);}
+.text-primary{color:var(--primary);}
+.text-muted{color:var(--text-muted);}
+.mt-4{margin-top:16px;}.mt-6{margin-top:24px;}.mt-8{margin-top:32px;}
+.mb-4{margin-bottom:16px;}.mb-6{margin-bottom:24px;}
+.fw-700{font-weight:700;}
+.fs-14{font-size:14px;}
+.divider-h{height:1px;background:var(--border);margin:24px 0;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  .nav{padding:0 20px;}
+  .hero h1{font-size:36px;}
+  .founder-grid{grid-template-columns:1fr;text-align:center;gap:32px;}
+  .founder-content .sec-title{text-align:center;}
+  .contact-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .dashboard{grid-template-columns:1fr;}
+  .sidebar{display:none;}
+  .dash-main{padding:20px;}
+  .form-2col,.form-row{grid-template-columns:1fr;}
+}
+@media(max-width:600px){
+  .hero-stats{gap:20px;}
+  .hero-btns{flex-direction:column;}
+  .footer-grid{grid-template-columns:1fr;}
+  .result-stats{gap:16px;}
+  .profile-info-grid{grid-template-columns:1fr;}
+  .exam-topbar{flex-direction:column;gap:8px;text-align:center;}
+  .stat-cards{grid-template-columns:1fr 1fr;}
+  .modal{margin:10px;}
+}
+
+/* ── REPORT BOX ── */
+.report-modal .modal{max-width:420px;}
+
+/* ── ALERT ── */
+.alert{padding:12px 16px;border-radius:8px;font-size:14px;margin-bottom:16px;display:flex;align-items:flex-start;gap:10px;}
+.alert-info{background:var(--primary-soft);color:var(--primary);border:1px solid rgba(11,37,69,.12);}
+[data-theme=dark] .alert-info{background:#162032;color:#7db8f7;border-color:#1e3a5f;}
+.alert i{margin-top:1px;flex-shrink:0;}
+
+/* ── STEPS ── */
+.steps{display:flex;gap:0;margin:32px 0;}
+.step{flex:1;text-align:center;position:relative;}
+.step::after{content:'';position:absolute;top:20px;left:50%;right:-50%;height:2px;background:var(--border);}
+.step:last-child::after{display:none;}
+.step-circle{width:40px;height:40px;border-radius:50%;background:var(--primary-soft);color:var(--primary);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;margin:0 auto 8px;position:relative;z-index:1;border:2px solid var(--border);}
+.step.done .step-circle{background:var(--primary);color:#fff;border-color:var(--primary);}
+.step.active .step-circle{background:var(--accent);color:#fff;border-color:var(--accent);}
+.step-label{font-size:12px;font-weight:600;color:var(--text-muted);}
+
+/* Highlight BG sections */
+.bg-surface{background:var(--surface);}
+.bg-primary-soft{background:var(--primary-soft);}
+[data-theme=dark] .bg-primary-soft{background:#162032;}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="nav" id="mainNav">
+  <div class="nav-logo" onclick="goTo('home')">
+    <div class="nav-logo-icon">Pf</div>
+    <div class="nav-logo-text">
+      <div class="nav-logo-en">Paraffin</div>
+      <div class="nav-logo-bn">প্যারাফিন</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <div class="nav-link" onclick="goTo('home')" id="nl-home" data-en="Home" data-bn="হোম">Home</div>
+    <div class="nav-link" onclick="goTo('courses')" id="nl-courses" data-en="Courses" data-bn="কোর্সসমূহ">Courses</div>
+    <div class="nav-link" onclick="goTo('qbank')" id="nl-qbank" data-en="Question Bank" data-bn="প্রশ্ন ব্যাংক">Question Bank</div>
+    <div class="nav-link" onclick="goTo('exam')" id="nl-exam" data-en="Exams" data-bn="পরীক্ষা">Exams</div>
+    <div class="nav-link" onclick="goTo('contact')" id="nl-contact" data-en="Contact" data-bn="যোগাযোগ">Contact</div>
+  </div>
+  <div class="nav-spacer"></div>
+  <div class="nav-actions" id="navActions">
+    <button class="lang-btn" onclick="toggleLang()" id="langBtn">বাং</button>
+    <button class="btn-icon" onclick="toggleTheme()" id="themeBtn" title="Toggle dark mode"><i class="fas fa-moon"></i></button>
+    <button class="btn btn-outline btn-sm" onclick="openModal('loginModal')" id="loginBtn" data-en="Login" data-bn="লগইন">Login</button>
+    <button class="btn btn-primary btn-sm" onclick="openModal('signupModal')" id="signupBtn" data-en="Sign Up" data-bn="সাইন আপ">Sign Up</button>
+  </div>
+  <div class="hamburger" onclick="toggleMobileNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="nav-link" onclick="goTo('home');closeMobileNav()" data-en="Home" data-bn="হোম">Home</div>
+  <div class="nav-link" onclick="goTo('courses');closeMobileNav()" data-en="Courses" data-bn="কোর্সসমূহ">Courses</div>
+  <div class="nav-link" onclick="goTo('qbank');closeMobileNav()" data-en="Question Bank" data-bn="প্রশ্ন ব্যাংক">Question Bank</div>
+  <div class="nav-link" onclick="goTo('exam');closeMobileNav()" data-en="Exams" data-bn="পরীক্ষা">Exams</div>
+  <div class="nav-link" onclick="goTo('contact');closeMobileNav()" data-en="Contact" data-bn="যোগাযোগ">Contact</div>
+  <div style="display:flex;gap:8px;margin-top:8px;">
+    <button class="btn btn-outline btn-sm" onclick="openModal('loginModal')" data-en="Login" data-bn="লগইন">Login</button>
+    <button class="btn btn-primary btn-sm" onclick="openModal('signupModal')" data-en="Sign Up" data-bn="সাইন আপ">Sign Up</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ PAGE: HOME ═══════════════════════════════ -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-star"></i><span data-en="Bangladesh's Premier Exam Preparation Platform" data-bn="বাংলাদেশের শীর্ষ পরীক্ষা প্রস্তুতি প্ল্যাটফর্ম">Bangladesh's Premier Exam Preparation Platform</span></div>
+        <h1 data-en="<span>Excel</span> in Every<br>Exam You Take" data-bn="প্রতিটি পরীক্ষায়<br><span>সফলতা</span> অর্জন করুন"><span>Excel</span> in Every<br>Exam You Take</h1>
+        <div class="hero-bn" data-en="পড়ো, অনুশীলন করো, জয় করো।" data-bn="পড়ো, অনুশীলন করো, জয় করো।">পড়ো, অনুশীলন করো, জয় করো।</div>
+        <p data-en="Paraffin gives students a complete question bank, timed practice exams, and personalized performance tracking. Teachers craft high-quality MCQs, create exam links, and generate PDF papers — all in one place." data-bn="প্যারাফিন শিক্ষার্থীদের সম্পূর্ণ প্রশ্ন ব্যাংক, সময়-নির্ধারিত অনুশীলন পরীক্ষা এবং ব্যক্তিগত পারফরমেন্স ট্র্যাকিং প্রদান করে।">Paraffin gives students a complete question bank, timed practice exams, and personalized performance tracking. Teachers craft high-quality MCQs, create exam links, and generate PDF papers — all in one place.</p>
+        <div class="hero-btns">
+          <button class="btn btn-primary btn-lg" onclick="openModal('signupModal')"><i class="fas fa-rocket"></i><span data-en="Get Started Free" data-bn="বিনামূল্যে শুরু করুন">Get Started Free</span></button>
+          <button class="btn btn-outline btn-lg" onclick="goTo('exam')"><i class="fas fa-play-circle"></i><span data-en="Try a Practice Exam" data-bn="অনুশীলন পরীক্ষা দিন">Try a Practice Exam</span></button>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><span class="hero-stat-num">12K+</span><span class="hero-stat-label" data-en="Questions" data-bn="প্রশ্নসমূহ">Questions</span></div>
+          <div class="hero-stat"><span class="hero-stat-num">5K+</span><span class="hero-stat-label" data-en="Active Students" data-bn="সক্রিয় শিক্ষার্থী">Active Students</span></div>
+          <div class="hero-stat"><span class="hero-stat-num">320+</span><span class="hero-stat-label" data-en="Teachers" data-bn="শিক্ষক">Teachers</span></div>
+          <div class="hero-stat"><span class="hero-stat-num">96%</span><span class="hero-stat-label" data-en="Pass Rate" data-bn="পাস রেট">Pass Rate</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section bg-surface">
+    <div class="container">
+      <div class="sec-header">
+        <div class="sec-tag tag-primary"><i class="fas fa-bolt"></i>&nbsp;<span data-en="PLATFORM FEATURES" data-bn="প্ল্যাটফর্মের বৈশিষ্ট্য">PLATFORM FEATURES</span></div>
+        <h2 class="sec-title" data-en="Everything You Need to Succeed" data-bn="সাফল্যের জন্য যা প্রয়োজন সবই আছে">Everything You Need to Succeed</h2>
+        <p class="sec-sub" data-en="A comprehensive toolkit for students and teachers alike, designed for the Bangladeshi education system." data-bn="বাংলাদেশের শিক্ষাব্যবস্থার জন্য ডিজাইন করা শিক্ষার্থী ও শিক্ষক উভয়ের জন্য একটি সম্পূর্ণ টুলকিট।">A comprehensive toolkit for students and teachers alike, designed for the Bangladeshi education system.</p>
+      </div>
+      <div class="grid-3">
+        <div class="feature-card"><div class="feature-icon" style="background:#e8eef7;color:#0b2545;"><i class="fas fa-database"></i></div><h3 class="feature-title" data-en="Curated Question Bank" data-bn="কিউরেটেড প্রশ্ন ব্যাংক">Curated Question Bank</h3><p class="feature-text" data-en="12,000+ board-sourced MCQs organised by category, subject, chapter, and topic. Filter and practice precisely what you need." data-bn="বিভাগ, বিষয়, অধ্যায় এবং টপিক অনুযায়ী সাজানো ১২,০০০+ বোর্ড প্রশ্ন।">12,000+ board-sourced MCQs organised by category, subject, chapter, and topic. Filter and practice precisely what you need.</p></div>
+        <div class="feature-card"><div class="feature-icon" style="background:#fdf3e0;color:#c9912a;"><i class="fas fa-clock"></i></div><h3 class="feature-title" data-en="Timed Mock Exams" data-bn="সময়-নির্ধারিত মক পরীক্ষা">Timed Mock Exams</h3><p class="feature-text" data-en="Simulate HSC, Medical, University and Engineering admissions under real exam pressure with instant results and performance analytics." data-bn="রিয়েল পরীক্ষার পরিবেশে HSC, মেডিকেল, বিশ্ববিদ্যালয় এবং ইঞ্জিনিয়ারিং প্রবেশিকা পরীক্ষার অনুকরণ করুন।">Simulate HSC, Medical, University and Engineering admissions under real exam pressure with instant results and performance analytics.</p></div>
+        <div class="feature-card"><div class="feature-icon" style="background:#e3f2eb;color:#1a5c3a;"><i class="fas fa-chalkboard-teacher"></i></div><h3 class="feature-title" data-en="Teacher Dashboard" data-bn="শিক্ষক ড্যাশবোর্ড">Teacher Dashboard</h3><p class="feature-text" data-en="Teachers can add questions, build custom exams, generate printable PDFs and track student performance — all from one dashboard." data-bn="শিক্ষকরা প্রশ্ন যোগ করতে, কাস্টম পরীক্ষা তৈরি করতে, প্রিন্টযোগ্য PDF তৈরি করতে পারেন।">Teachers can add questions, build custom exams, generate printable PDFs and track student performance — all from one dashboard.</p></div>
+        <div class="feature-card"><div class="feature-icon" style="background:#fde8e6;color:#c0392b;"><i class="fas fa-chart-line"></i></div><h3 class="feature-title" data-en="Performance Analytics" data-bn="পারফরমেন্স বিশ্লেষণ">Performance Analytics</h3><p class="feature-text" data-en="Track progress with detailed reports showing your strengths, weaknesses, accuracy rate and improvement over time." data-bn="বিস্তারিত রিপোর্টের মাধ্যমে আপনার শক্তি, দুর্বলতা এবং উন্নতি ট্র্যাক করুন।">Track progress with detailed reports showing your strengths, weaknesses, accuracy rate and improvement over time.</p></div>
+        <div class="feature-card"><div class="feature-icon" style="background:#ede8fd;color:#6c3cd8;"><i class="fas fa-file-pdf"></i></div><h3 class="feature-title" data-en="PDF Paper Generator" data-bn="PDF পেপার জেনারেটর">PDF Paper Generator</h3><p class="feature-text" data-en="Teachers can instantly create beautifully formatted printable exam papers with answer keys, ready to share with students." data-bn="শিক্ষকরা তাৎক্ষণিকভাবে উত্তর চাবি সহ সুন্দরভাবে ফরম্যাট করা প্রিন্টযোগ্য পরীক্ষার পেপার তৈরি করতে পারেন।">Teachers can instantly create beautifully formatted printable exam papers with answer keys, ready to share with students.</p></div>
+        <div class="feature-card"><div class="feature-icon" style="background:#e8f7f4;color:#0f6e56;"><i class="fas fa-shield-alt"></i></div><h3 class="feature-title" data-en="Quality Control System" data-bn="মান নিয়ন্ত্রণ ব্যবস্থা">Quality Control System</h3><p class="feature-text" data-en="Every question undergoes admin review before going live. Report errors via the Report Box; corrections require admin approval." data-bn="প্রতিটি প্রশ্ন লাইভ হওয়ার আগে অ্যাডমিন রিভিউ হয়। রিপোর্ট বক্সের মাধ্যমে ত্রুটি রিপোর্ট করুন।">Every question undergoes admin review before going live. Report errors via the Report Box; corrections require admin approval.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED COURSES -->
+  <section class="section">
+    <div class="container">
+      <div class="sec-header">
+        <div class="sec-tag tag-accent"><i class="fas fa-graduation-cap"></i>&nbsp;<span data-en="FEATURED COURSES" data-bn="বিশেষ কোর্সসমূহ">FEATURED COURSES</span></div>
+        <h2 class="sec-title" data-en="Learn from the Best" data-bn="সেরাদের কাছ থেকে শিখুন">Learn from the Best</h2>
+        <p class="sec-sub" data-en="Expert-curated courses for every major exam in Bangladesh." data-bn="বাংলাদেশের প্রতিটি প্রধান পরীক্ষার জন্য বিশেষজ্ঞ কোর্স।">Expert-curated courses for every major exam in Bangladesh.</p>
+      </div>
+      <div class="grid-3" id="featuredCourses"></div>
+      <div class="text-center mt-8">
+        <button class="btn btn-outline" onclick="goTo('courses')"><span data-en="View All Courses" data-bn="সব কোর্স দেখুন">View All Courses</span>&nbsp;<i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXAM CATEGORIES -->
+  <section class="section bg-surface">
+    <div class="container">
+      <div class="sec-header">
+        <div class="sec-tag tag-primary"><i class="fas fa-layer-group"></i>&nbsp;<span data-en="EXAM CATEGORIES" data-bn="পরীক্ষার বিভাগ">EXAM CATEGORIES</span></div>
+        <h2 class="sec-title" data-en="Which Exam Are You Preparing For?" data-bn="আপনি কোন পরীক্ষার প্রস্তুতি নিচ্ছেন?">Which Exam Are You Preparing For?</h2>
+      </div>
+      <div class="grid-4">
+        <div class="exam-card hsc" onclick="startExam('hsc')">
+          <span class="exam-icon">📚</span>
+          <div class="exam-title">HSC</div>
+          <div class="exam-count" data-en="4,200+ Questions" data-bn="৪,২০০+ প্রশ্ন">4,200+ Questions</div>
+          <p style="font-size:13px;color:var(--text-muted);margin-top:8px;" data-en="All boards · Science / Humanities / Commerce" data-bn="সকল বোর্ড · বিজ্ঞান / মানবিক / বাণিজ্য">All boards · Science / Humanities / Commerce</p>
+        </div>
+        <div class="exam-card medical" onclick="startExam('medical')">
+          <span class="exam-icon">🩺</span>
+          <div class="exam-title" data-en="Medical Admission" data-bn="মেডিকেল ভর্তি">Medical Admission</div>
+          <div class="exam-count" data-en="3,100+ Questions" data-bn="৩,১০০+ প্রশ্ন">3,100+ Questions</div>
+          <p style="font-size:13px;color:var(--text-muted);margin-top:8px;" data-en="MBBS · BDS · Nursing" data-bn="MBBS · BDS · নার্সিং">MBBS · BDS · Nursing</p>
+        </div>
+        <div class="exam-card university" onclick="startExam('university')">
+          <span class="exam-icon">🎓</span>
+          <div class="exam-title" data-en="University Admission" data-bn="বিশ্ববিদ্যালয় ভর্তি">University Admission</div>
+          <div class="exam-count" data-en="2,800+ Questions" data-bn="২,৮০০+ প্রশ্ন">2,800+ Questions</div>
+          <p style="font-size:13px;color:var(--text-muted);margin-top:8px;" data-en="DU · JU · RU · CU" data-bn="DU · JU · RU · CU">DU · JU · RU · CU</p>
+        </div>
+        <div class="exam-card engineering" onclick="startExam('engineering')">
+          <span class="exam-icon">⚙️</span>
+          <div class="exam-title" data-en="Engineering Admission" data-bn="ইঞ্জিনিয়ারিং ভর্তি">Engineering Admission</div>
+          <div class="exam-count" data-en="2,100+ Questions" data-bn="২,১০০+ প্রশ্ন">2,100+ Questions</div>
+          <p style="font-size:13px;color:var(--text-muted);margin-top:8px;" data-en="BUET · KUET · RUET" data-bn="BUET · KUET · RUET">BUET · KUET · RUET</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section">
+    <div class="container">
+      <div class="sec-header">
+        <div class="sec-tag tag-green"><i class="fas fa-quote-left"></i>&nbsp;<span data-en="STUDENT REVIEWS" data-bn="শিক্ষার্থীর পর্যালোচনা">STUDENT REVIEWS</span></div>
+        <h2 class="sec-title" data-en="What Our Students Say" data-bn="আমাদের শিক্ষার্থীরা কী বলছেন">What Our Students Say</h2>
+      </div>
+      <div class="grid-3" id="testimonialGrid"></div>
+    </div>
+  </section>
+
+  <!-- FOUNDER -->
+  <section class="founder-section">
+    <div class="container">
+      <div class="founder-grid">
+        <div class="founder-img-wrap">
+          <div class="founder-avatar">🧑‍💻</div>
+          <div class="founder-name" data-en="Md. Rafiqul Islam" data-bn="মো. রফিকুল ইসলাম">Md. Rafiqul Islam</div>
+          <div class="founder-title" data-en="Founder & CEO, Paraffin" data-bn="প্রতিষ্ঠাতা ও প্রধান নির্বাহী">Founder & CEO, Paraffin</div>
+        </div>
+        <div class="founder-content">
+          <div class="sec-tag tag-accent" style="margin-bottom:14px;"><i class="fas fa-user-tie"></i>&nbsp;<span data-en="FOUNDER'S STORY" data-bn="প্রতিষ্ঠাতার গল্প">FOUNDER'S STORY</span></div>
+          <h2 class="sec-title" data-en="Building the Future of Education in Bangladesh" data-bn="বাংলাদেশের শিক্ষার ভবিষ্যৎ গড়ছি">Building the Future of Education in Bangladesh</h2>
+          <p class="founder-bio" data-en="Growing up in Bangladesh, I witnessed firsthand how access to quality exam preparation resources determined who got ahead and who fell behind. Students in rural districts had little access to well-structured question banks or guided practice exams. Paraffin was born from a simple belief: every Bangladeshi student deserves world-class exam preparation tools, regardless of their background or location." data-bn="বাংলাদেশে বড় হয়ে আমি সরাসরি দেখেছি কিভাবে মানসম্পন্ন পরীক্ষার প্রস্তুতির সংস্থানগুলিতে অ্যাক্সেস নির্ধারণ করে কে এগিয়ে যাবে। গ্রামীণ জেলার শিক্ষার্থীদের সু-কাঠামোগত প্রশ্ন ব্যাংকে সামান্যই অ্যাক্সেস ছিল। প্যারাফিন একটি সরল বিশ্বাস থেকে জন্ম নিয়েছে।">Growing up in Bangladesh, I witnessed firsthand how access to quality exam preparation resources determined who got ahead and who fell behind. Students in rural districts had little access to well-structured question banks or guided practice exams. Paraffin was born from a simple belief: every Bangladeshi student deserves world-class exam preparation tools, regardless of their background or location.</p>
+          <div class="founder-badge"><i class="fas fa-map-marker-alt"></i><span data-en="Dhaka, Bangladesh — Est. 2024" data-bn="ঢাকা, বাংলাদেশ — প্রতিষ্ঠিত ২০২৪">Dhaka, Bangladesh — Est. 2024</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact-section">
+    <div class="container">
+      <div class="sec-header">
+        <div class="sec-tag tag-primary"><i class="fas fa-envelope"></i>&nbsp;<span data-en="GET IN TOUCH" data-bn="যোগাযোগ করুন">GET IN TOUCH</span></div>
+        <h2 class="sec-title" data-en="We'd Love to Hear From You" data-bn="আপনার কাছ থেকে শুনতে চাই">We'd Love to Hear From You</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item"><div class="contact-icon"><i class="fas fa-envelope"></i></div><div><div class="contact-label" data-en="Email" data-bn="ইমেইল">Email</div><div class="contact-value">paraffin101@gmail.com</div></div></div>
+          <div class="contact-item"><div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div><div><div class="contact-label" data-en="Location" data-bn="অবস্থান">Location</div><div class="contact-value" data-en="Dhaka, Bangladesh" data-bn="ঢাকা, বাংলাদেশ">Dhaka, Bangladesh</div></div></div>
+          <div class="contact-item"><div class="contact-icon"><i class="fas fa-clock"></i></div><div><div class="contact-label" data-en="Support Hours" data-bn="সাপোর্ট সময়">Support Hours</div><div class="contact-value" data-en="Sat–Thu, 9AM–9PM" data-bn="শনি–বৃহস্পতি, সকাল ৯টা–রাত ৯টা">Sat–Thu, 9AM–9PM</div></div></div>
+          <div class="contact-item"><div class="contact-icon"><i class="fab fa-facebook-f"></i></div><div><div class="contact-label" data-en="Social Media" data-bn="সোশ্যাল মিডিয়া">Social Media</div><div class="social-icons"><div class="social-icon"><i class="fab fa-facebook-f"></i></div><div class="social-icon"><i class="fab fa-youtube"></i></div><div class="social-icon"><i class="fab fa-instagram"></i></div><div class="social-icon"><i class="fab fa-whatsapp"></i></div></div></div></div>
+        </div>
+        <div class="contact-form">
+          <h3 style="font-family:var(--font-display);font-size:22px;font-weight:700;color:var(--primary);margin-bottom:22px;" data-en="Send a Message" data-bn="বার্তা পাঠান">Send a Message</h3>
+          <div class="form-group"><label class="form-label" data-en="Your Name" data-bn="আপনার নাম">Your Name</label><input class="form-input" type="text" placeholder="Enter your name"/></div>
+          <div class="form-group"><label class="form-label" data-en="Email Address" data-bn="ইমেইল ঠিকানা">Email Address</label><input class="form-input" type="email" placeholder="your@email.com"/></div>
+          <div class="form-group"><label class="form-label" data-en="Subject" data-bn="বিষয়">Subject</label><input class="form-input" type="text" placeholder="How can we help?"/></div>
+          <div class="form-group"><label class="form-label" data-en="Message" data-bn="বার্তা">Message</label><textarea class="form-textarea" placeholder="Write your message here..."></textarea></div>
+          <button class="btn btn-primary" style="width:100%;" onclick="showToast('Message sent! We will get back to you soon.','success')"><i class="fas fa-paper-plane"></i>&nbsp;<span data-en="Send Message" data-bn="বার্তা পাঠান">Send Message</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo"><div class="nav-logo-icon">Pf</div><div class="nav-logo-text"><div class="nav-logo-en">Paraffin</div><div class="nav-logo-bn">প্যারাফিন</div></div></div>
+          <p class="footer-desc" data-en="Bangladesh's premier question bank and exam preparation platform for students and teachers." data-bn="বাংলাদেশের শীর্ষ প্রশ্ন ব্যাংক ও পরীক্ষার প্রস্তুতি প্ল্যাটফর্ম।">Bangladesh's premier question bank and exam preparation platform for students and teachers.</p>
+        </div>
+        <div><div class="footer-heading" data-en="Platform" data-bn="প্ল্যাটফর্ম">Platform</div><ul class="footer-links"><li><a onclick="goTo('courses')" data-en="Courses" data-bn="কোর্স">Courses</a></li><li><a onclick="goTo('qbank')" data-en="Question Bank" data-bn="প্রশ্ন ব্যাংক">Question Bank</a></li><li><a onclick="goTo('exam')" data-en="Practice Exams" data-bn="অনুশীলন পরীক্ষা">Practice Exams</a></li><li><a onclick="openModal('signupModal')" data-en="Sign Up Free" data-bn="বিনামূল্যে সাইন আপ">Sign Up Free</a></li></ul></div>
+        <div><div class="footer-heading" data-en="Exam Types" data-bn="পরীক্ষার ধরন">Exam Types</div><ul class="footer-links"><li><a>HSC</a></li><li><a data-en="Medical Admission" data-bn="মেডিকেল ভর্তি">Medical Admission</a></li><li><a data-en="University Admission" data-bn="বিশ্ববিদ্যালয় ভর্তি">University Admission</a></li><li><a data-en="Engineering Admission" data-bn="ইঞ্জিনিয়ারিং ভর্তি">Engineering Admission</a></li></ul></div>
+        <div><div class="footer-heading" data-en="Support" data-bn="সাপোর্ট">Support</div><ul class="footer-links"><li><a onclick="goTo('contact')" data-en="Contact Us" data-bn="যোগাযোগ করুন">Contact Us</a></li><li><a data-en="Help Center" data-bn="সহায়তা কেন্দ্র">Help Center</a></li><li><a data-en="Privacy Policy" data-bn="গোপনীয়তা নীতি">Privacy Policy</a></li><li><a data-en="Terms of Service" data-bn="সেবার শর্তাবলী">Terms of Service</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span data-en="© 2024 Paraffin. All rights reserved." data-bn="© ২০২৪ প্যারাফিন। সকল অধিকার সংরক্ষিত।">© 2024 Paraffin. All rights reserved.</span><span>paraffin101@gmail.com</span></div>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══════════════════ PAGE: COURSES ═══════════════════ -->
+<div class="page" id="page-courses">
+  <div class="courses-hero">
+    <h2 data-en="All Courses" data-bn="সকল কোর্স">All Courses</h2>
+    <p data-en="Structured learning paths for every exam" data-bn="প্রতিটি পরীক্ষার জন্য কাঠামোবদ্ধ শিক্ষা পথ">Structured learning paths for every exam</p>
+  </div>
+  <div class="container section-sm">
+    <div class="filter-bar">
+      <span class="filter-label" data-en="Filter:" data-bn="ফিল্টার:">Filter:</span>
+      <button class="filter-chip active" onclick="filterCourses(this,'all')" data-en="All" data-bn="সব">All</button>
+      <button class="filter-chip" onclick="filterCourses(this,'hsc')" data-en="HSC" data-bn="HSC">HSC</button>
+      <button class="filter-chip" onclick="filterCourses(this,'medical')" data-en="Medical" data-bn="মেডিকেল">Medical</button>
+      <button class="filter-chip" onclick="filterCourses(this,'university')" data-en="University" data-bn="বিশ্ববিদ্যালয়">University</button>
+      <button class="filter-chip" onclick="filterCourses(this,'engineering')" data-en="Engineering" data-bn="ইঞ্জিনিয়ারিং">Engineering</button>
+    </div>
+    <div class="grid-3" id="allCoursesGrid"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════ PAGE: QUESTION BANK ═══════════════════ -->
+<div class="page" id="page-qbank">
+  <div class="courses-hero">
+    <h2 data-en="Question Bank" data-bn="প্রশ্ন ব্যাংক">Question Bank</h2>
+    <p data-en="12,000+ curated questions with explanations" data-bn="ব্যাখ্যাসহ ১২,০০০+ কিউরেটেড প্রশ্ন">12,000+ curated questions with explanations</p>
+  </div>
+  <div class="container section-sm">
+    <div class="qb-filters">
+      <input class="qb-search" type="text" placeholder="🔍  Search questions..." oninput="filterQuestions()"/>
+      <select class="qb-filters" id="qb-cat" onchange="filterQuestions()" style="padding:9px 14px;border:1.5px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:14px;">
+        <option value="">All Categories</option>
+        <option>HSC</option><option>Medical</option><option>University</option><option>Engineering</option>
+      </select>
+      <select id="qb-subj" onchange="filterQuestions()" style="padding:9px 14px;border:1.5px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:14px;">
+        <option value="">All Subjects</option>
+        <option>Physics</option><option>Chemistry</option><option>Biology</option><option>Mathematics</option><option>English</option>
+      </select>
+    </div>
+    <div id="questionList"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════ PAGE: EXAM ═══════════════════ -->
+<div class="page" id="page-exam">
+  <div class="container section-sm">
+    <div id="examSelector">
+      <div class="sec-header">
+        <div class="sec-tag tag-primary"><i class="fas fa-pen-alt"></i>&nbsp;<span data-en="PRACTICE EXAMS" data-bn="অনুশীলন পরীক্ষা">PRACTICE EXAMS</span></div>
+        <h2 class="sec-title" data-en="Choose Your Exam" data-bn="আপনার পরীক্ষা বেছে নিন">Choose Your Exam</h2>
+        <p class="sec-sub" data-en="Select a category and start a timed mock exam." data-bn="একটি বিভাগ বেছে নিন এবং সময়-নির্ধারিত মক পরীক্ষা শুরু করুন।">Select a category and start a timed mock exam.</p>
+      </div>
+      <div class="grid-4">
+        <div class="exam-card hsc" onclick="startExam('hsc')"><span class="exam-icon">📚</span><div class="exam-title">HSC</div><div class="exam-count">30 Questions · 30 min</div></div>
+        <div class="exam-card medical" onclick="startExam('medical')"><span class="exam-icon">🩺</span><div class="exam-title" data-en="Medical" data-bn="মেডিকেল">Medical</div><div class="exam-count">25 Questions · 25 min</div></div>
+        <div class="exam-card university" onclick="startExam('university')"><span class="exam-icon">🎓</span><div class="exam-title" data-en="University" data-bn="বিশ্ববিদ্যালয়">University</div><div class="exam-count">25 Questions · 30 min</div></div>
+        <div class="exam-card engineering" onclick="startExam('engineering')"><span class="exam-icon">⚙️</span><div class="exam-title" data-en="Engineering" data-bn="ইঞ্জিনিয়ারিং">Engineering</div><div class="exam-count">25 Questions · 30 min</div></div>
+      </div>
+    </div>
+    <div id="examContainer" style="display:none;padding-top:16px;"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════ PAGE: TEACHER DASHBOARD ═══════════════════ -->
+<div class="page" id="page-teacher">
+  <div class="dashboard">
+    <aside class="sidebar">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar">TJ</div>
+        <div><div class="sidebar-name" data-en="Teacher Jalal" data-bn="শিক্ষক জালাল">Teacher Jalal</div><div class="sidebar-role" data-en="Teacher" data-bn="শিক্ষক">Teacher</div></div>
+      </div>
+      <ul class="sidebar-menu">
+        <li class="sidebar-item active" onclick="showTeacherTab('overview',this)"><i class="fas fa-home"></i><span data-en="Overview" data-bn="সারসংক্ষেপ">Overview</span></li>
+        <li class="sidebar-item" onclick="showTeacherTab('add-question',this)"><i class="fas fa-plus-circle"></i><span data-en="Add Question" data-bn="প্রশ্ন যোগ করুন">Add Question</span></li>
+        <li class="sidebar-item" onclick="showTeacherTab('my-questions',this)"><i class="fas fa-list"></i><span data-en="My Questions" data-bn="আমার প্রশ্ন">My Questions</span></li>
+        <li class="sidebar-item" onclick="showTeacherTab('create-exam',this)"><i class="fas fa-pen-alt"></i><span data-en="Create Exam" data-bn="পরীক্ষা তৈরি করুন">Create Exam</span></li>
+        <li class="sidebar-item" onclick="showTeacherTab('pdf-gen',this)"><i class="fas fa-file-pdf"></i><span data-en="Generate PDF" data-bn="PDF তৈরি করুন">Generate PDF</span></li>
+        <div class="sidebar-divider"></div>
+        <li class="sidebar-item" onclick="showTeacherTab('profile',this)"><i class="fas fa-user"></i><span data-en="My Profile" data-bn="আমার প্রোফাইল">My Profile</span></li>
+        <li class="sidebar-item" onclick="logout()"><i class="fas fa-sign-out-alt"></i><span data-en="Logout" data-bn="লগআউট">Logout</span></li>
+      </ul>
+    </aside>
+    <main class="dash-main" id="teacherMain"></main>
+  </div>
+</div>
+
+<!-- ═══════════════════ PAGE: STUDENT DASHBOARD ═══════════════════ -->
+<div class="page" id="page-student">
+  <div class="dashboard">
+    <aside class="sidebar">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" style="background:var(--green);">SR</div>
+        <div><div class="sidebar-name" data-en="Sadia Rahman" data-bn="সাদিয়া রহমান">Sadia Rahman</div><div class="sidebar-role" style="color:var(--green);" data-en="Student" data-bn="শিক্ষার্থী">Student</div></div>
+      </div>
+      <ul class="sidebar-menu">
+        <li class="sidebar-item active" onclick="showStudentTab('overview',this)"><i class="fas fa-home"></i><span data-en="Dashboard" data-bn="ড্যাশবোর্ড">Dashboard</span></li>
+        <li class="sidebar-item" onclick="showStudentTab('courses',this)"><i class="fas fa-graduation-cap"></i><span data-en="My Courses" data-bn="আমার কোর্স">My Courses</span></li>
+        <li class="sidebar-item" onclick="showStudentTab('results',this)"><i class="fas fa-chart-bar"></i><span data-en="My Results" data-bn="আমার ফলাফল">My Results</span></li>
+        <li class="sidebar-item" onclick="showStudentTab('practice',this)"><i class="fas fa-dumbbell"></i><span data-en="Practice" data-bn="অনুশীলন">Practice</span></li>
+        <div class="sidebar-divider"></div>
+        <li class="sidebar-item" onclick="showStudentTab('profile',this)"><i class="fas fa-user"></i><span data-en="My Profile" data-bn="আমার প্রোফাইল">My Profile</span></li>
+        <li class="sidebar-item" onclick="logout()"><i class="fas fa-sign-out-alt"></i><span data-en="Logout" data-bn="লগআউট">Logout</span></li>
+      </ul>
+    </aside>
+    <main class="dash-main" id="studentMain"></main>
+  </div>
+</div>
+
+<!-- ═══════════════════ PAGE: CONTACT ═══════════════════ -->
+<div class="page" id="page-contact">
+  <div style="padding-top:40px;">
+    <div class="container">
+      <div class="sec-header">
+        <div class="sec-tag tag-primary"><i class="fas fa-envelope"></i>&nbsp;<span data-en="CONTACT US" data-bn="যোগাযোগ">CONTACT US</span></div>
+        <h2 class="sec-title" data-en="Get in Touch" data-bn="যোগাযোগ করুন">Get in Touch</h2>
+        <p class="sec-sub">paraffin101@gmail.com</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item"><div class="contact-icon"><i class="fas fa-envelope"></i></div><div><div class="contact-label">Email</div><div class="contact-value">paraffin101@gmail.com</div></div></div>
+          <div class="contact-item"><div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div><div><div class="contact-label" data-en="Location" data-bn="অবস্থান">Location</div><div class="contact-value" data-en="Dhaka, Bangladesh" data-bn="ঢাকা, বাংলাদেশ">Dhaka, Bangladesh</div></div></div>
+          <div class="contact-item"><div class="contact-icon"><i class="fas fa-clock"></i></div><div><div class="contact-label" data-en="Support Hours" data-bn="সাপোর্ট সময়">Support Hours</div><div class="contact-value" data-en="Sat–Thu, 9AM–9PM" data-bn="শনি–বৃহস্পতি, সকাল ৯টা–রাত ৯টা">Sat–Thu, 9AM–9PM</div></div></div>
+          <div style="display:flex;gap:10px;margin-top:8px;"><div class="social-icon"><i class="fab fa-facebook-f"></i></div><div class="social-icon"><i class="fab fa-youtube"></i></div><div class="social-icon"><i class="fab fa-instagram"></i></div></div>
+        </div>
+        <div class="contact-form">
+          <h3 style="font-family:var(--font-display);font-size:22px;font-weight:700;color:var(--primary);margin-bottom:22px;" data-en="Send a Message" data-bn="বার্তা পাঠান">Send a Message</h3>
+          <div class="form-group"><label class="form-label" data-en="Name" data-bn="নাম">Name</label><input class="form-input" type="text"/></div>
+          <div class="form-group"><label class="form-label">Email</label><input class="form-input" type="email"/></div>
+          <div class="form-group"><label class="form-label" data-en="Message" data-bn="বার্তা">Message</label><textarea class="form-textarea"></textarea></div>
+          <button class="btn btn-primary" style="width:100%;" onclick="showToast('Message sent!','success')"><i class="fas fa-paper-plane"></i>&nbsp;<span data-en="Send" data-bn="পাঠান">Send</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ MODALS ═══════════════════════════ -->
+
+<!-- LOGIN MODAL -->
+<div class="modal-overlay" id="loginModal">
+  <div class="modal">
+    <div class="modal-header">
+      <div><div class="modal-title" data-en="Welcome Back" data-bn="স্বাগতম">Welcome Back</div><div class="modal-sub" data-en="Sign in to your Paraffin account" data-bn="আপনার প্যারাফিন অ্যাকাউন্টে সাইন ইন করুন">Sign in to your Paraffin account</div></div>
+      <div class="modal-close" onclick="closeModal('loginModal')"><i class="fas fa-times"></i></div>
+    </div>
+    <div class="modal-body">
+      <div class="tabs"><div class="tab active" onclick="switchLoginTab('student',this)" data-en="Student" data-bn="শিক্ষার্থী">Student</div><div class="tab" onclick="switchLoginTab('teacher',this)" data-en="Teacher" data-bn="শিক্ষক">Teacher</div></div>
+      <div class="form-group"><label class="form-label" data-en="Phone Number" data-bn="ফোন নম্বর">Phone Number</label><input class="form-input" type="tel" placeholder="+880"/></div>
+      <div class="form-group"><label class="form-label" data-en="Password" data-bn="পাসওয়ার্ড">Password</label><input class="form-input" type="password" placeholder="••••••••"/></div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="doLogin()" id="loginSubmitBtn" data-en="Login as Student" data-bn="শিক্ষার্থী হিসেবে লগইন">Login as Student</button>
+      <div class="form-note" data-en="Don't have an account? <a onclick='openModal(\"signupModal\");closeModal(\"loginModal\")'>Sign Up</a>" data-bn="অ্যাকাউন্ট নেই? <a onclick='openModal(\"signupModal\");closeModal(\"loginModal\")'>সাইন আপ করুন</a>">Don't have an account? <a onclick='openModal("signupModal");closeModal("loginModal")'>Sign Up</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- SIGNUP MODAL -->
+<div class="modal-overlay" id="signupModal">
+  <div class="modal">
+    <div class="modal-header">
+      <div><div class="modal-title" data-en="Create Account" data-bn="অ্যাকাউন্ট তৈরি করুন">Create Account</div><div class="modal-sub" data-en="Join Paraffin for free today" data-bn="আজই বিনামূল্যে প্যারাফিনে যোগ দিন">Join Paraffin for free today</div></div>
+      <div class="modal-close" onclick="closeModal('signupModal')"><i class="fas fa-times"></i></div>
+    </div>
+    <div class="modal-body">
+      <div class="tabs">
+        <div class="tab active" onclick="switchSignupTab('student',this)" data-en="Student" data-bn="শিক্ষার্থী">Student</div>
+        <div class="tab" onclick="switchSignupTab('teacher',this)" data-en="Teacher" data-bn="শিক্ষক">Teacher</div>
+      </div>
+
+      <!-- Student Form -->
+      <div id="studentSignup">
+        <div class="form-row">
+          <div class="form-group"><label class="form-label" data-en="Full Name" data-bn="পুরো নাম">Full Name</label><input class="form-input" type="text" placeholder="Your name"/></div>
+          <div class="form-group"><label class="form-label" data-en="Phone Number" data-bn="ফোন নম্বর">Phone Number</label><input class="form-input" type="tel" placeholder="+880"/></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label class="form-label" data-en="Institute" data-bn="প্রতিষ্ঠান">Institute</label><input class="form-input" type="text" placeholder="Your school/college"/></div>
+          <div class="form-group"><label class="form-label" data-en="Home District" data-bn="গৃহ জেলা">Home District</label>
+            <select class="form-select"><option value="">Select District</option><option>Dhaka</option><option>Chittagong</option><option>Sylhet</option><option>Rajshahi</option><option>Khulna</option><option>Barisal</option><option>Rangpur</option><option>Mymensingh</option></select>
+          </div>
+        </div>
+        <div class="form-group"><label class="form-label" data-en="Password" data-bn="পাসওয়ার্ড">Password</label><input class="form-input" type="password" placeholder="Create a strong password"/></div>
+        <div class="form-group"><label class="form-label" data-en="Profile Picture" data-bn="প্রোফাইল ছবি">Profile Picture</label><input class="form-input" type="file" accept="image/*"/></div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="doSignup('student')"><i class="fas fa-user-graduate"></i>&nbsp;<span data-en="Create Student Account" data-bn="শিক্ষার্থী অ্যাকাউন্ট তৈরি করুন">Create Student Account</span></button>
+      </div>
+
+      <!-- Teacher Form -->
+      <div id="teacherSignup" style="display:none;">
+        <div class="form-row">
+          <div class="form-group"><label class="form-label" data-en="Full Name" data-bn="পুরো নাম">Full Name</label><input class="form-input" type="text" placeholder="Your name"/></div>
+          <div class="form-group"><label class="form-label" data-en="Phone Number" data-bn="ফোন নম্বর">Phone Number</label><input class="form-input" type="tel" placeholder="+880"/></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label class="form-label" data-en="Institute" data-bn="প্রতিষ্ঠান">Institute</label><input class="form-input" type="text" placeholder="Your institution"/></div>
+          <div class="form-group"><label class="form-label" data-en="Department" data-bn="বিভাগ">Department</label><input class="form-input" type="text" placeholder="e.g. Physics Dept."/></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label class="form-label" data-en="Subject You Teach" data-bn="আপনি যে বিষয় পড়ান">Subject</label>
+            <select class="form-select"><option>Physics</option><option>Chemistry</option><option>Biology</option><option>Mathematics</option><option>English</option><option>Bangla</option><option>ICT</option></select>
+          </div>
+          <div class="form-group"><label class="form-label" data-en="Password" data-bn="পাসওয়ার্ড">Password</label><input class="form-input" type="password" placeholder="••••••••"/></div>
+        </div>
+        <div class="form-group"><label class="form-label" data-en="Bio" data-bn="বায়ো">Bio</label><textarea class="form-textarea" style="min-height:70px;" placeholder="Tell students about yourself..."></textarea></div>
+        <div class="form-group"><label class="form-label" data-en="Profile Picture" data-bn="প্রোফাইল ছবি">Profile Picture</label><input class="form-input" type="file" accept="image/*"/></div>
+        <button class="btn btn-accent" style="width:100%;justify-content:center;" onclick="doSignup('teacher')"><i class="fas fa-chalkboard-teacher"></i>&nbsp;<span data-en="Create Teacher Account" data-bn="শিক্ষক অ্যাকাউন্ট তৈরি করুন">Create Teacher Account</span></button>
+      </div>
+      <div class="form-note" data-en="Already have an account? <a onclick='openModal(\"loginModal\");closeModal(\"signupModal\")'>Login</a>" data-bn="ইতিমধ্যে অ্যাকাউন্ট আছে? <a onclick='openModal(\"loginModal\");closeModal(\"signupModal\")'>লগইন করুন</a>">Already have an account? <a onclick='openModal("loginModal");closeModal("signupModal")'>Login</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- REPORT BOX MODAL -->
+<div class="modal-overlay report-modal" id="reportModal">
+  <div class="modal">
+    <div class="modal-header">
+      <div><div class="modal-title" data-en="Report / Correction Request" data-bn="রিপোর্ট / সংশোধন অনুরোধ">Report / Correction Request</div><div class="modal-sub" data-en="Admin will review your request." data-bn="অ্যাডমিন আপনার অনুরোধ পর্যালোচনা করবেন।">Admin will review your request.</div></div>
+      <div class="modal-close" onclick="closeModal('reportModal')"><i class="fas fa-times"></i></div>
+    </div>
+    <div class="modal-body">
+      <div class="alert alert-info"><i class="fas fa-info-circle"></i><span data-en="Once submitted, this question will be flagged for admin review. You cannot edit questions directly." data-bn="জমা দেওয়ার পরে, এই প্রশ্নটি অ্যাডমিন পর্যালোচনার জন্য চিহ্নিত করা হবে।">Once submitted, this question will be flagged for admin review. You cannot edit questions directly.</span></div>
+      <div class="form-group"><label class="form-label" data-en="Issue Type" data-bn="সমস্যার ধরন">Issue Type</label>
+        <select class="form-select"><option data-en="Wrong Answer" data-bn="ভুল উত্তর">Wrong Answer</option><option data-en="Incorrect Question Text" data-bn="ভুল প্রশ্নের টেক্সট">Incorrect Question Text</option><option data-en="Wrong Explanation" data-bn="ভুল ব্যাখ্যা">Wrong Explanation</option><option data-en="Wrong Source/Year" data-bn="ভুল উৎস/বছর">Wrong Source/Year</option><option data-en="Other" data-bn="অন্যান্য">Other</option></select>
+      </div>
+      <div class="form-group"><label class="form-label" data-en="Describe the Issue" data-bn="সমস্যা বর্ণনা করুন">Describe the Issue</label><textarea class="form-textarea" placeholder="Explain what is wrong and what the correct answer should be..."></textarea></div>
+      <div class="form-group"><label class="form-label" data-en="Source / Reference (optional)" data-bn="উৎস / রেফারেন্স (ঐচ্ছিক)">Source / Reference (optional)</label><input class="form-input" type="text" placeholder="e.g. Dhaka Board 2022, Page 45"/></div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="closeModal('reportModal');showToast('Report submitted. Admin will review within 48 hours.','success')"><i class="fas fa-flag"></i>&nbsp;<span data-en="Submit Report" data-bn="রিপোর্ট জমা দিন">Submit Report</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ═══════════════════════════════════════
+//  STATE
+// ═══════════════════════════════════════
+let currentLang='en', currentUser=null, loginType='student', activeExam=null, examTimer=null;
+let examQuestions=[], currentQ=0, userAnswers=[], examSeconds=1800;
+
+// ═══════════════════════════════════════
+//  DATA
+// ═══════════════════════════════════════
+const COURSES=[
+  {id:1,cat:'hsc',title:'HSC Physics Complete',titleBn:'HSC পদার্থবিজ্ঞান সম্পূর্ণ',lessons:48,questions:620,level:'HSC',color:'#e8eef7',emoji:'⚛️',teacher:'Mr. Karim',price:'Free'},
+  {id:2,cat:'medical',title:'Medical Biology Crash Course',titleBn:'মেডিকেল বায়োলজি ক্র্যাশ কোর্স',lessons:36,questions:480,level:'Medical',color:'#fde8e6',emoji:'🧬',teacher:'Dr. Sultana',price:'৳ 499'},
+  {id:3,cat:'university',title:'DU Admission Mathematics',titleBn:'DU ভর্তি গণিত',lessons:52,questions:730,level:'University',color:'#e8f7f4',emoji:'📐',teacher:'Prof. Ahmed',price:'৳ 349'},
+  {id:4,cat:'engineering',title:'BUET Preparation Chemistry',titleBn:'BUET প্রস্তুতি রসায়ন',lessons:44,questions:560,level:'Engineering',color:'#e3f2eb',emoji:'⚗️',teacher:'Dr. Hossain',price:'৳ 399'},
+  {id:5,cat:'hsc',title:'HSC English Grammar & Writing',titleBn:'HSC ইংরেজি গ্রামার ও রাইটিং',lessons:30,questions:350,level:'HSC',color:'#ede8fd',emoji:'📝',teacher:'Ms. Nadia',price:'Free'},
+  {id:6,cat:'medical',title:'Medical Chemistry Masterclass',titleBn:'মেডিকেল রসায়ন মাস্টারক্লাস',lessons:40,questions:510,level:'Medical',color:'#fdf3e0',emoji:'🔬',teacher:'Dr. Rashid',price:'৳ 549'},
+];
+
+const QUESTIONS=[
+  {id:1,cat:'HSC',subj:'Physics',chapter:'Motion',topic:'Kinematics',q:'A body is thrown vertically upward with a velocity of 20 m/s. What is the maximum height reached? (g = 10 m/s²)',qBn:'একটি বস্তু 20 m/s বেগে উপরের দিকে ছোড়া হয়। সর্বোচ্চ উচ্চতা কত? (g = 10 m/s²)',opts:['10 m','15 m','20 m','25 m'],correct:2,exp:'Using v² = u² - 2gh; at max height v=0. h = u²/2g = (20)²/(2×10) = 400/20 = 20 m',source:'Dhaka Board',year:'2022'},
+  {id:2,cat:'Medical',subj:'Biology',chapter:'Cell Biology',topic:'Cell Division',q:'Which type of cell division produces gametes in animals?',qBn:'প্রাণীতে গ্যামেট তৈরিতে কোন ধরনের কোষ বিভাজন হয়?',opts:['Mitosis','Meiosis','Amitosis','Binary Fission'],correct:1,exp:'Meiosis (reduction division) produces haploid gametes (n) from diploid cells (2n), halving the chromosome number.',source:'Medical Admission',year:'2023'},
+  {id:3,cat:'HSC',subj:'Chemistry',chapter:'Atomic Structure',topic:'Electron Configuration',q:'The electronic configuration of Fe²⁺ ion is:',qBn:'Fe²⁺ আয়নের ইলেক্ট্রন কনফিগারেশন হলো:',opts:['[Ar] 3d⁶','[Ar] 3d⁶ 4s²','[Ar] 3d⁴ 4s²','[Ar] 3d⁵ 4s¹'],correct:0,exp:'Fe is [Ar] 3d⁶ 4s². When Fe²⁺ forms, it loses the two 4s electrons first, giving [Ar] 3d⁶.',source:'Rajshahi Board',year:'2022'},
+  {id:4,cat:'University',subj:'Mathematics',chapter:'Calculus',topic:'Differentiation',q:'What is the derivative of sin(x)·cos(x)?',qBn:'sin(x)·cos(x) এর অন্তরক কত?',opts:['sin(2x)','cos(2x)','2sin(x)cos(x)','1'],correct:1,exp:'Using product rule: d/dx[sin(x)cos(x)] = cos²(x) - sin²(x) = cos(2x)',source:'DU Admission',year:'2021'},
+  {id:5,cat:'Engineering',subj:'Physics',chapter:'Electricity',topic:'Circuits',q:'Two resistors of 4Ω and 6Ω are connected in parallel. The equivalent resistance is:',qBn:'4Ω এবং 6Ω রোধ সমান্তরালে সংযুক্ত। সমতুল্য রোধ কত?',opts:['10 Ω','2.4 Ω','5 Ω','1.2 Ω'],correct:1,exp:'1/R = 1/4 + 1/6 = 3/12 + 2/12 = 5/12. R = 12/5 = 2.4Ω',source:'BUET Admission',year:'2023'},
+];
+
+const TESTIMONIALS=[
+  {name:'Rafi Hossain',nameBn:'রাফি হোসেন',text:"Paraffin's question bank helped me nail my BUET admission. The explanations are top-notch and the timed exams trained me to manage pressure perfectly.",textBn:'প্যারাফিনের প্রশ্ন ব্যাংক আমাকে BUET ভর্তিতে সফল হতে সাহায্য করেছে। ব্যাখ্যাগুলো অসাধারণ।',inst:'BUET, EEE',stars:5,initials:'RH'},
+  {name:'Tasnim Akter',nameBn:'তাসনিম আক্তার',text:"I got into Dhaka Medical College! The biology question bank and the analytics showing my weak topics made all the difference.",textBn:'আমি ঢাকা মেডিকেল কলেজে ভর্তি হয়েছি! বায়োলজি প্রশ্ন ব্যাংক এবং দুর্বল বিষয় বিশ্লেষণ অনেক সাহায্য করেছে।',inst:'Dhaka Medical College',stars:5,initials:'TA'},
+  {name:'Saad Mahmud',nameBn:'সাদ মাহমুদ',text:"As a teacher, the dashboard is incredible. Adding questions is fast, creating PDFs takes 30 seconds, and students love the platform.",textBn:'শিক্ষক হিসেবে ড্যাশবোর্ড অসাধারণ। প্রশ্ন যোগ করা দ্রুত এবং PDF তৈরি করতে মাত্র ৩০ সেকেন্ড লাগে।',inst:'Notre Dame College, Physics',stars:5,initials:'SM'},
+];
+
+const EXAM_QS={
+  hsc:[
+    {q:"Which law states that current is proportional to voltage?",qBn:"কোন নিয়মে বলা হয় যে কারেন্ট ভোল্টেজের সমানুপাতিক?",opts:["Newton's","Ohm's","Faraday's","Coulomb's"],correct:1,exp:"Ohm's Law: V = IR, where V is voltage, I is current, R is resistance."},
+    {q:"The process of photosynthesis occurs in which organelle?",qBn:"সালোকসংশ্লেষণ কোন অর্গানেলে ঘটে?",opts:["Mitochondria","Nucleus","Chloroplast","Ribosome"],correct:2,exp:"Chloroplasts contain chlorophyll and are the site of photosynthesis in plant cells."},
+    {q:"What is the chemical formula of sulfuric acid?",qBn:"সালফিউরিক অ্যাসিডের রাসায়নিক সূত্র কী?",opts:["HCl","H₂SO₄","HNO₃","H₃PO₄"],correct:1,exp:"Sulfuric acid (H₂SO₄) is a strong diprotic acid widely used in industry."},
+  ],
+  medical:[
+    {q:"Which blood type is the universal donor?",qBn:"কোন রক্তের গ্রুপ সর্বজনীন দাতা?",opts:["A","B","AB","O"],correct:3,exp:"Blood type O negative is the universal donor as it lacks A, B, and Rh antigens."},
+    {q:"The powerhouse of the cell is the:",qBn:"কোষের পাওয়ারহাউস হলো:",opts:["Nucleus","Ribosome","Mitochondria","Golgi body"],correct:2,exp:"Mitochondria produce ATP through cellular respiration, earning the nickname 'powerhouse of the cell'."},
+  ],
+  university:[
+    {q:"What is ∫sin(x)dx equal to?",qBn:"∫sin(x)dx এর মান কত?",opts:["-cos(x)+C","cos(x)+C","sin(x)+C","-sin(x)+C"],correct:0,exp:"The integral of sin(x) is -cos(x) + C, verified by differentiating -cos(x) to get sin(x)."},
+    {q:"Shakespeare wrote how many sonnets?",qBn:"শেক্সপিয়র কতটি সনেট লিখেছিলেন?",opts:["100","126","154","168"],correct:2,exp:"Shakespeare wrote 154 sonnets, first published in 1609."},
+  ],
+  engineering:[
+    {q:"The unit of electric capacitance is:",qBn:"বৈদ্যুতিক ধারকত্বের একক কী?",opts:["Volt","Ohm","Farad","Henry"],correct:2,exp:"Capacitance is measured in Farads (F), named after Michael Faraday."},
+    {q:"In a right triangle with legs 3 and 4, the hypotenuse is:",qBn:"3 ও 4 বাহুবিশিষ্ট সমকোণী ত্রিভুজের অতিভুজ কত?",opts:["5","6","7","8"],correct:0,exp:"By Pythagorean theorem: c² = 3² + 4² = 9 + 16 = 25, so c = 5."},
+  ],
+};
+
+// ═══════════════════════════════════════
+//  NAVIGATION
+// ═══════════════════════════════════════
+function goTo(page){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  const target=document.getElementById('page-'+page);
+  if(target){target.classList.add('active');window.scrollTo(0,0);}
+  document.querySelectorAll('.nav-link').forEach(l=>l.classList.remove('active'));
+  const nl=document.getElementById('nl-'+page);if(nl)nl.classList.add('active');
+  if(page==='courses')renderAllCourses();
+  if(page==='qbank')renderQuestions();
+  if(page==='exam'){document.getElementById('examSelector').style.display='';document.getElementById('examContainer').style.display='none';if(examTimer)clearInterval(examTimer);}
+  closeMobileNav();
+}
+function toggleMobileNav(){document.getElementById('mobileNav').classList.toggle('open');}
+function closeMobileNav(){document.getElementById('mobileNav').classList.remove('open');}
+
+// ═══════════════════════════════════════
+//  THEME
+// ═══════════════════════════════════════
+function toggleTheme(){
+  const h=document.documentElement;
+  const isDark=h.getAttribute('data-theme')==='dark';
+  h.setAttribute('data-theme',isDark?'light':'dark');
+  document.getElementById('themeBtn').innerHTML=isDark?'<i class="fas fa-moon"></i>':'<i class="fas fa-sun"></i>';
+}
+
+// ═══════════════════════════════════════
+//  LANGUAGE
+// ═══════════════════════════════════════
+function toggleLang(){
+  currentLang=currentLang==='en'?'bn':'en';
+  document.getElementById('langBtn').textContent=currentLang==='en'?'বাং':'EN';
+  document.documentElement.setAttribute('lang',currentLang==='bn'?'bn':'en');
+  applyLang();
+}
+function applyLang(){
+  document.querySelectorAll('[data-en][data-bn]').forEach(el=>{
+    const val=el.getAttribute('data-'+currentLang);
+    if(val)el.innerHTML=val;
+  });
+}
+
+// ═══════════════════════════════════════
+//  MODALS
+// ═══════════════════════════════════════
+function openModal(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(id){document.getElementById(id).classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.modal-overlay').forEach(o=>o.addEventListener('click',e=>{if(e.target===o)closeModal(o.id);}));
+
+function switchLoginTab(type,el){
+  loginType=type;
+  document.querySelectorAll('#loginModal .tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  const btn=document.getElementById('loginSubmitBtn');
+  btn.textContent=type==='student'?(currentLang==='en'?'Login as Student':'শিক্ষার্থী হিসেবে লগইন'):(currentLang==='en'?'Login as Teacher':'শিক্ষক হিসেবে লগইন');
+}
+
+function switchSignupTab(type,el){
+  document.querySelectorAll('#signupModal .tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('studentSignup').style.display=type==='student'?'':'none';
+  document.getElementById('teacherSignup').style.display=type==='teacher'?'':'none';
+}
+
+function doLogin(){
+  currentUser={type:loginType,name:loginType==='student'?'Sadia Rahman':'Teacher Jalal'};
+  closeModal('loginModal');
+  updateNavAfterLogin();
+  showToast('Welcome back, '+currentUser.name+'! 🎉','success');
+  setTimeout(()=>{if(currentUser.type==='teacher')goTo('teacher');else goTo('student');},600);
+}
+
+function doSignup(type){
+  currentUser={type,name:type==='student'?'Sadia Rahman':'Teacher Jalal'};
+  closeModal('signupModal');
+  updateNavAfterLogin();
+  showToast('Account created successfully! Welcome to Paraffin. 🎉','success');
+  setTimeout(()=>{if(type==='teacher'){initTeacherDash();goTo('teacher');}else{initStudentDash();goTo('student');}},600);
+}
+
+function updateNavAfterLogin(){
+  const na=document.getElementById('navActions');
+  na.innerHTML=`
+    <button class="lang-btn" onclick="toggleLang()" id="langBtn">বাং</button>
+    <button class="btn-icon" onclick="toggleTheme()" id="themeBtn"><i class="fas fa-moon"></i></button>
+    <div style="display:flex;align-items:center;gap:8px;cursor:pointer;" onclick="goTo('${currentUser.type==='teacher'?'teacher':'student'}')">
+      <div style="width:34px;height:34px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;">${currentUser.name.split(' ').map(n=>n[0]).join('')}</div>
+      <span style="font-size:14px;font-weight:600;color:var(--text);">${currentUser.name}</span>
+    </div>
+    <button class="btn btn-outline btn-sm" onclick="logout()"><i class="fas fa-sign-out-alt"></i></button>
+  `;
+}
+
+function logout(){
+  currentUser=null;
+  const na=document.getElementById('navActions');
+  na.innerHTML=`
+    <button class="lang-btn" onclick="toggleLang()" id="langBtn">বাং</button>
+    <button class="btn-icon" onclick="toggleTheme()" id="themeBtn"><i class="fas fa-moon"></i></button>
+    <button class="btn btn-outline btn-sm" onclick="openModal('loginModal')" id="loginBtn">Login</button>
+    <button class="btn btn-primary btn-sm" onclick="openModal('signupModal')" id="signupBtn">Sign Up</button>
+  `;
+  goTo('home');
+  showToast('You have been logged out.','');
+}
+
+// ═══════════════════════════════════════
+//  TOAST
+// ═══════════════════════════════════════
+function showToast(msg,type=''){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.className='toast '+(type||'');
+  setTimeout(()=>t.classList.add('show'),10);
+  setTimeout(()=>t.classList.remove('show'),3600);
+}
+
+// ═══════════════════════════════════════
+//  RENDER HOMEPAGE
+// ═══════════════════════════════════════
+function renderFeaturedCourses(){
+  const g=document.getElementById('featuredCourses');if(!g)return;
+  g.innerHTML=COURSES.slice(0,3).map(c=>`
+    <div class="course-card" onclick="showToast('Enrolling in ${c.title}...','success')">
+      <div class="course-thumb" style="background:${c.color}">${c.emoji}</div>
+      <div class="course-body">
+        <span class="course-tag" style="background:var(--accent-soft);color:var(--accent);">${c.level}</span>
+        <div class="course-title">${currentLang==='bn'?c.titleBn:c.title}</div>
+        <div class="course-meta"><span><i class="fas fa-book" style="margin-right:3px;"></i>${c.lessons} Lessons</span><span><i class="fas fa-question-circle" style="margin-right:3px;"></i>${c.questions} Qs</span></div>
+      </div>
+      <div class="course-footer"><span class="fs-14" style="color:var(--text-muted);"><i class="fas fa-user" style="margin-right:4px;"></i>${c.teacher}</span><span class="course-price">${c.price}</span></div>
+    </div>`).join('');
+}
+
+function renderTestimonials(){
+  const g=document.getElementById('testimonialGrid');if(!g)return;
+  g.innerHTML=TESTIMONIALS.map(t=>`
+    <div class="testimonial-card">
+      <div class="stars">${'★'.repeat(t.stars)}</div>
+      <p class="testimonial-text">${currentLang==='bn'?t.textBn:t.text}</p>
+      <div class="testimonial-author">
+        <div class="avatar">${t.initials}</div>
+        <div><div class="author-name">${currentLang==='bn'?t.nameBn:t.name}</div><div class="author-meta">${t.inst}</div></div>
+      </div>
+    </div>`).join('');
+}
+
+// ═══════════════════════════════════════
+//  COURSES PAGE
+// ═══════════════════════════════════════
+function renderAllCourses(filter='all'){
+  const g=document.getElementById('allCoursesGrid');if(!g)return;
+  const filtered=filter==='all'?COURSES:COURSES.filter(c=>c.cat===filter);
+  g.innerHTML=filtered.map(c=>`
+    <div class="course-card">
+      <div class="course-thumb" style="background:${c.color}">${c.emoji}</div>
+      <div class="course-body">
+        <span class="course-tag" style="background:var(--accent-soft);color:var(--accent);">${c.level}</span>
+        <div class="course-title">${currentLang==='bn'?c.titleBn:c.title}</div>
+        <div class="course-meta"><span><i class="fas fa-book" style="margin-right:3px;"></i>${c.lessons} Lessons</span><span><i class="fas fa-question-circle" style="margin-right:3px;"></i>${c.questions} Qs</span></div>
+      </div>
+      <div class="course-footer"><span class="fs-14" style="color:var(--text-muted);"><i class="fas fa-user" style="margin-right:4px;"></i>${c.teacher}</span><span class="course-price">${c.price}</span><button class="btn btn-primary btn-sm" onclick="showToast('Enrolling...','success')">Enroll</button></div>
+    </div>`).join('');
+}
+
+function filterCourses(el,f){
+  document.querySelectorAll('.filter-chip').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');renderAllCourses(f);
+}
+
+// ═══════════════════════════════════════
+//  QUESTION BANK
+// ═══════════════════════════════════════
+function renderQuestions(qs=QUESTIONS){
+  const g=document.getElementById('questionList');if(!g)return;
+  g.innerHTML=qs.map((q,i)=>`
+    <div class="q-card" id="qcard-${q.id}">
+      <div class="q-report" onclick="openModal('reportModal')"><i class="fas fa-flag"></i> Report</div>
+      <div class="q-meta">
+        <span class="q-tag">${q.cat}</span>
+        <span class="q-tag">${q.subj}</span>
+        <span class="q-tag">${q.chapter}</span>
+        <span class="q-tag" style="background:var(--accent-soft);color:var(--accent);">${q.source} ${q.year}</span>
+      </div>
+      <div class="q-text">${currentLang==='bn'?q.qBn:q.q}</div>
+      <div class="q-options">
+        ${q.opts.map((o,oi)=>`<div class="q-option" onclick="checkAnswer(${q.id},${oi},${q.correct},this)">
+          <strong>${String.fromCharCode(65+oi)}.</strong> ${o}
+        </div>`).join('')}
+      </div>
+      <div class="q-explanation" id="exp-${q.id}"><strong>Explanation:</strong> ${q.exp}</div>
+      <div class="q-actions">
+        <button class="btn btn-outline btn-sm" onclick="document.getElementById('exp-${q.id}').classList.toggle('show')"><i class="fas fa-lightbulb"></i> Show Explanation</button>
+        <button class="btn btn-outline btn-sm" onclick="openModal('reportModal')"><i class="fas fa-flag"></i> Report</button>
+      </div>
+    </div>`).join('');
+}
+
+function checkAnswer(qid,chosen,correct,el){
+  const card=document.getElementById('qcard-'+qid);
+  card.querySelectorAll('.q-option').forEach((o,i)=>{
+    o.style.pointerEvents='none';
+    if(i===correct)o.classList.add('correct');
+    else if(o===el)o.classList.add('wrong');
+  });
+  document.getElementById('exp-'+qid).classList.add('show');
+}
+
+function filterQuestions(){
+  const search=document.querySelector('.qb-search')?.value?.toLowerCase()||'';
+  const cat=document.getElementById('qb-cat')?.value||'';
+  const subj=document.getElementById('qb-subj')?.value||'';
+  const filtered=QUESTIONS.filter(q=>{
+    const text=(q.q+q.subj+q.chapter).toLowerCase();
+    return(!search||text.includes(search))&&(!cat||q.cat===cat)&&(!subj||q.subj===subj);
+  });
+  renderQuestions(filtered);
+}
+
+// ═══════════════════════════════════════
+//  EXAM SYSTEM
+// ═══════════════════════════════════════
+function startExam(type){
+  goTo('exam');
+  const qs=EXAM_QS[type]||EXAM_QS.hsc;
+  examQuestions=[...qs];
+  userAnswers=new Array(qs.length).fill(null);
+  currentQ=0;
+  examSeconds=qs.length*60;
+  document.getElementById('examSelector').style.display='none';
+  const ec=document.getElementById('examContainer');
+  ec.style.display='block';
+  renderExamQuestion();
+  startExamTimer();
+}
+
+function renderExamQuestion(){
+  if(currentQ>=examQuestions.length){showExamResult();return;}
+  const q=examQuestions[currentQ];
+  const pct=Math.round((currentQ/examQuestions.length)*100);
+  document.getElementById('examContainer').innerHTML=`
+    <div class="exam-ui">
+      <div class="exam-topbar">
+        <div class="exam-name">Paraffin Practice Exam</div>
+        <div class="exam-timer" id="examTimerDisplay">30:00</div>
+      </div>
+      <div class="exam-progress"><div class="exam-progress-bar" id="examBar" style="width:${pct}%"></div></div>
+      <div class="exam-body">
+        <div class="exam-q-num">Question ${currentQ+1} of ${examQuestions.length}</div>
+        <div class="exam-q-text">${q.q}</div>
+        <div class="exam-options">
+          ${q.opts.map((o,i)=>`<div class="exam-option ${userAnswers[currentQ]===i?'selected':''}" onclick="selectAnswer(${i},this)">
+            <div class="exam-opt-letter">${String.fromCharCode(65+i)}</div>${o}
+          </div>`).join('')}
+        </div>
+      </div>
+      <div class="exam-footer">
+        <div style="font-size:13px;color:var(--text-muted);">${examQuestions.filter((_,i)=>userAnswers[i]!==null).length} of ${examQuestions.length} answered</div>
+        <div class="exam-nav-btns">
+          ${currentQ>0?`<button class="btn btn-outline btn-sm" onclick="navExam(-1)"><i class="fas fa-chevron-left"></i> Prev</button>`:''}
+          ${currentQ<examQuestions.length-1
+            ?`<button class="btn btn-primary btn-sm" onclick="navExam(1)">Next <i class="fas fa-chevron-right"></i></button>`
+            :`<button class="btn btn-accent btn-sm" onclick="showExamResult()"><i class="fas fa-check"></i> Submit Exam</button>`}
+        </div>
+      </div>
+    </div>`;
+  updateTimerDisplay();
+}
+
+function selectAnswer(i,el){
+  userAnswers[currentQ]=i;
+  document.querySelectorAll('.exam-option').forEach((o,oi)=>{
+    o.classList.toggle('selected',oi===i);
+  });
+}
+
+function navExam(dir){
+  currentQ+=dir;
+  renderExamQuestion();
+}
+
+let timerInterval=null;
+function startExamTimer(){
+  if(timerInterval)clearInterval(timerInterval);
+  timerInterval=setInterval(()=>{
+    examSeconds--;
+    updateTimerDisplay();
+    if(examSeconds<=0){clearInterval(timerInterval);showExamResult();}
+  },1000);
+}
+
+function updateTimerDisplay(){
+  const el=document.getElementById('examTimerDisplay');if(!el)return;
+  const m=Math.floor(examSeconds/60),s=examSeconds%60;
+  el.textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  if(examSeconds<60)el.style.color='#ff6b6b';
+}
+
+function showExamResult(){
+  if(timerInterval)clearInterval(timerInterval);
+  let correct=0;
+  examQuestions.forEach((q,i)=>{if(userAnswers[i]===q.correct)correct++;});
+  const pct=Math.round((correct/examQuestions.length)*100);
+  const grade=pct>=80?'Excellent!':pct>=60?'Good Job!':pct>=40?'Keep Practicing':'Need More Study';
+  document.getElementById('examContainer').innerHTML=`
+    <div class="exam-ui">
+      <div class="exam-topbar" style="background:var(--green);">
+        <div class="exam-name">Exam Complete!</div>
+        <div style="font-size:14px;opacity:.8;">${grade}</div>
+      </div>
+      <div class="exam-result">
+        <div class="result-circle" style="border-color:${pct>=60?'var(--green)':'var(--red)'};">
+          <div class="result-percent" style="color:${pct>=60?'var(--green)':'var(--red)'}">${pct}%</div>
+          <div class="result-label">Score</div>
+        </div>
+        <div class="result-title">${grade}</div>
+        <div class="result-stats">
+          <div class="result-stat"><div class="result-stat-num" style="color:var(--green);">${correct}</div><div class="result-stat-label">Correct</div></div>
+          <div class="result-stat"><div class="result-stat-num" style="color:var(--red);">${examQuestions.length-correct}</div><div class="result-stat-label">Wrong</div></div>
+          <div class="result-stat"><div class="result-stat-num" style="color:var(--accent);">${examQuestions.length}</div><div class="result-stat-label">Total</div></div>
+        </div>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <button class="btn btn-primary" onclick="goTo('exam')"><i class="fas fa-redo"></i> Try Again</button>
+          <button class="btn btn-outline" onclick="goTo('qbank')"><i class="fas fa-book"></i> Practice More</button>
+        </div>
+      </div>
+    </div>`;
+}
+
+// ═══════════════════════════════════════
+//  TEACHER DASHBOARD
+// ═══════════════════════════════════════
+function initTeacherDash(){showTeacherTab('overview',document.querySelector('#page-teacher .sidebar-item'));}
+
+function showTeacherTab(tab,el){
+  document.querySelectorAll('#page-teacher .sidebar-item').forEach(i=>i.classList.remove('active'));
+  if(el)el.classList.add('active');
+  const m=document.getElementById('teacherMain');
+  if(tab==='overview'){
+    m.innerHTML=`
+      <div class="dash-header"><div class="dash-title" data-en="Teacher Dashboard" data-bn="শিক্ষক ড্যাশবোর্ড">Teacher Dashboard</div><div class="dash-sub" data-en="Welcome back, Teacher Jalal 👋" data-bn="স্বাগতম, শিক্ষক জালাল 👋">Welcome back, Teacher Jalal 👋</div></div>
+      <div class="stat-cards">
+        <div class="stat-card"><div class="stat-num">142</div><div class="stat-label" data-en="Questions Added" data-bn="প্রশ্ন যোগ করা হয়েছে">Questions Added</div></div>
+        <div class="stat-card"><div class="stat-num">8</div><div class="stat-label" data-en="Exams Created" data-bn="পরীক্ষা তৈরি">Exams Created</div></div>
+        <div class="stat-card"><div class="stat-num">1,240</div><div class="stat-label" data-en="Students Reached" data-bn="শিক্ষার্থীরা পৌঁছেছে">Students Reached</div></div>
+        <div class="stat-card"><div class="stat-num">3</div><div class="stat-label" data-en="Pending Reviews" data-bn="পর্যালোচনা বাকি">Pending Reviews</div></div>
+      </div>
+      <div class="dash-section">
+        <div class="dash-section-title"><i class="fas fa-list"></i> Recent Questions</div>
+        ${QUESTIONS.slice(0,3).map(q=>`
+          <div style="padding:12px 0;border-bottom:1px solid var(--border-light);display:flex;align-items:center;justify-content:space-between;gap:12px;">
+            <div style="flex:1;min-width:0;"><div style="font-size:14px;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${q.q}</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">${q.cat} · ${q.subj} · ${q.source} ${q.year}</div></div>
+            <span class="q-badge badge-approved"><i class="fas fa-check"></i> Approved</span>
+          </div>`).join('')}
+      </div>
+      <div class="dash-section">
+        <div class="dash-section-title"><i class="fas fa-bolt"></i> Quick Actions</div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <button class="btn btn-primary" onclick="showTeacherTab('add-question',null)"><i class="fas fa-plus"></i> Add Question</button>
+          <button class="btn btn-accent" onclick="showTeacherTab('create-exam',null)"><i class="fas fa-pen-alt"></i> Create Exam</button>
+          <button class="btn btn-green" onclick="showTeacherTab('pdf-gen',null)"><i class="fas fa-file-pdf"></i> Generate PDF</button>
+        </div>
+      </div>`;
+  }else if(tab==='add-question'){
+    m.innerHTML=`
+      <div class="dash-header"><div class="dash-title">Add New Question</div><div class="dash-sub">Questions are locked after submission. Use Report Box to request edits.</div></div>
+      <div class="dash-section">
+        <div class="alert alert-info"><i class="fas fa-lock"></i> After final submission, questions <strong>cannot be edited directly</strong>. Submit a correction via the Report Box for admin approval.</div>
+        <div class="q-form">
+          <div class="form-2col">
+            <div class="form-group"><label class="form-label">Category</label><select class="form-select"><option>HSC</option><option>Medical</option><option>University</option><option>Engineering</option></select></div>
+            <div class="form-group"><label class="form-label">Subject</label><select class="form-select"><option>Physics</option><option>Chemistry</option><option>Biology</option><option>Mathematics</option><option>English</option><option>Bangla</option></select></div>
+          </div>
+          <div class="form-2col">
+            <div class="form-group"><label class="form-label">Chapter</label><input class="form-input" type="text" placeholder="e.g. Motion, Cell Biology"/></div>
+            <div class="form-group"><label class="form-label">Topic</label><input class="form-input" type="text" placeholder="e.g. Kinematics, Mitosis"/></div>
+          </div>
+          <div class="form-group"><label class="form-label">Question (English)</label><textarea class="form-textarea" placeholder="Write the MCQ question here..." style="min-height:80px;"></textarea></div>
+          <div class="form-group"><label class="form-label">Question (Bangla)</label><textarea class="form-textarea" placeholder="বাংলায় প্রশ্ন লিখুন..." style="min-height:80px;"></textarea></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <div class="form-group"><label class="form-label">Option A</label><input class="form-input" type="text"/></div>
+            <div class="form-group"><label class="form-label">Option B</label><input class="form-input" type="text"/></div>
+            <div class="form-group"><label class="form-label">Option C</label><input class="form-input" type="text"/></div>
+            <div class="form-group"><label class="form-label">Option D</label><input class="form-input" type="text"/></div>
+          </div>
+          <div class="form-2col">
+            <div class="form-group"><label class="form-label">Correct Answer</label><select class="form-select"><option>A</option><option>B</option><option>C</option><option>D</option></select></div>
+            <div class="form-group"><label class="form-label">Year</label><input class="form-input" type="text" placeholder="e.g. 2022"/></div>
+          </div>
+          <div class="form-group"><label class="form-label">Source (Board / University / Exam)</label><input class="form-input" type="text" placeholder="e.g. Dhaka Board, DU Admission, MBBS Admission"/></div>
+          <div class="form-group"><label class="form-label">Explanation / Solution</label><textarea class="form-textarea" placeholder="Provide a clear explanation of the correct answer..." style="min-height:90px;"></textarea></div>
+          <div style="display:flex;gap:12px;margin-top:4px;">
+            <button class="btn btn-outline">Save as Draft</button>
+            <button class="btn btn-primary" onclick="showToast('Question submitted for admin review!','success')"><i class="fas fa-paper-plane"></i> Submit Question</button>
+          </div>
+        </div>
+      </div>`;
+  }else if(tab==='my-questions'){
+    m.innerHTML=`
+      <div class="dash-header"><div class="dash-title">My Questions</div><div class="dash-sub">142 questions submitted • 139 approved • 3 pending</div></div>
+      <div class="dash-section">
+        ${QUESTIONS.map(q=>`
+          <div style="padding:16px 0;border-bottom:1px solid var(--border-light);">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+              <div style="flex:1;"><div style="font-size:14px;font-weight:600;color:var(--text);margin-bottom:6px;">${q.q}</div>
+              <div style="display:flex;gap:6px;flex-wrap:wrap;"><span class="q-tag">${q.cat}</span><span class="q-tag">${q.subj}</span><span class="q-tag">${q.source} ${q.year}</span></div></div>
+              <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;">
+                <span class="q-badge badge-approved"><i class="fas fa-check"></i> Approved</span>
+                <button class="btn btn-outline btn-sm" onclick="openModal('reportModal')"><i class="fas fa-edit"></i> Request Edit</button>
+              </div>
+            </div>
+          </div>`).join('')}
+      </div>`;
+  }else if(tab==='create-exam'){
+    m.innerHTML=`
+      <div class="dash-header"><div class="dash-title">Create Exam Link</div><div class="dash-sub">Build a custom exam and share a link with your students.</div></div>
+      <div class="dash-section">
+        <div class="form-group"><label class="form-label">Exam Title</label><input class="form-input" type="text" placeholder="e.g. HSC Physics Chapter 1 Test"/></div>
+        <div class="form-2col">
+          <div class="form-group"><label class="form-label">Category</label><select class="form-select"><option>HSC</option><option>Medical</option><option>University</option><option>Engineering</option></select></div>
+          <div class="form-group"><label class="form-label">Number of Questions</label><input class="form-input" type="number" value="25" min="5" max="100"/></div>
+        </div>
+        <div class="form-2col">
+          <div class="form-group"><label class="form-label">Duration (minutes)</label><input class="form-input" type="number" value="30" min="5" max="180"/></div>
+          <div class="form-group"><label class="form-label">Subject Filter</label><select class="form-select"><option>All Subjects</option><option>Physics</option><option>Chemistry</option><option>Biology</option><option>Mathematics</option></select></div>
+        </div>
+        <div class="form-group"><label class="form-label">Instructions (optional)</label><textarea class="form-textarea" placeholder="Add any instructions for students..."></textarea></div>
+        <div style="display:flex;gap:12px;margin-top:4px;">
+          <button class="btn btn-primary" onclick="generateExamLink()"><i class="fas fa-link"></i> Generate Exam Link</button>
+        </div>
+        <div id="examLinkResult" style="display:none;margin-top:18px;padding:16px;background:var(--green-soft);border-radius:8px;border:1px solid rgba(26,92,58,.2);">
+          <div style="font-size:13px;font-weight:700;color:var(--green);margin-bottom:8px;"><i class="fas fa-check-circle"></i> Exam Link Generated!</div>
+          <code style="font-size:13px;word-break:break-all;font-family:var(--font-mono);color:var(--text);">https://paraffin.app/exam/EXAM-7F3K2P</code>
+          <button class="btn btn-green btn-sm" style="margin-top:10px;" onclick="showToast('Link copied to clipboard!','success')"><i class="fas fa-copy"></i> Copy Link</button>
+        </div>
+      </div>`;
+  }else if(tab==='pdf-gen'){
+    m.innerHTML=`
+      <div class="dash-header"><div class="dash-title">Generate PDF Paper</div><div class="dash-sub">Create a printable question paper with answer key.</div></div>
+      <div class="dash-section">
+        <div class="form-group"><label class="form-label">Exam Title</label><input class="form-input" type="text" placeholder="e.g. HSC Physics Mock Test 01" value="HSC Physics Mock Test 01"/></div>
+        <div class="form-2col">
+          <div class="form-group"><label class="form-label">Institution</label><input class="form-input" type="text" placeholder="Your school name"/></div>
+          <div class="form-group"><label class="form-label">Date</label><input class="form-input" type="date"/></div>
+        </div>
+        <div class="form-2col">
+          <div class="form-group"><label class="form-label">Category</label><select class="form-select"><option>HSC</option><option>Medical</option><option>University</option></select></div>
+          <div class="form-group"><label class="form-label">Number of Questions</label><input class="form-input" type="number" value="30"/></div>
+        </div>
+        <div class="form-group" style="display:flex;align-items:center;gap:10px;"><input type="checkbox" id="includeKey" checked style="width:16px;height:16px;accent-color:var(--primary);"/><label for="includeKey" class="form-label" style="margin:0;">Include Answer Key</label></div>
+        <div style="display:flex;gap:12px;margin-top:4px;">
+          <button class="btn btn-primary" onclick="showToast('PDF generated and downloading...','success')"><i class="fas fa-file-pdf"></i> Generate & Download PDF</button>
+          <button class="btn btn-outline" onclick="showToast('PDF preview opened.','')"><i class="fas fa-eye"></i> Preview</button>
+        </div>
+      </div>`;
+  }else if(tab==='profile'){
+    m.innerHTML=`
+      <div class="dash-header"><div class="dash-title">My Profile</div></div>
+      <div class="dash-section">
+        <div style="text-align:center;margin-bottom:24px;">
+          <div style="width:80px;height:80px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;margin:0 auto 12px;">TJ</div>
+          <div style="font-size:20px;font-weight:700;color:var(--primary);">Teacher Jalal</div>
+          <div style="font-size:13px;color:var(--text-muted);">Physics Teacher • Notre Dame College</div>
+        </div>
+        <div class="profile-info-grid">
+          <div class="profile-field"><div class="profile-field-label">Name</div><div class="profile-field-value">Md. Jalal Uddin</div></div>
+          <div class="profile-field"><div class="profile-field-label">Institute</div><div class="profile-field-value">Notre Dame College, Dhaka</div></div>
+          <div class="profile-field"><div class="profile-field-label">Department</div><div class="profile-field-value">Physics Department</div></div>
+          <div class="profile-field"><div class="profile-field-label">Subject</div><div class="profile-field-value">Physics</div></div>
+          <div class="profile-field"><div class="profile-field-label">Phone</div><div class="profile-field-value">+880 1712-345678</div></div>
+          <div class="profile-field"><div class="profile-field-label">Bio</div><div class="profile-field-value">15 years of teaching Physics at HSC level. Passionate about making science accessible.</div></div>
+        </div>
+        <button class="btn btn-primary" style="margin-top:20px;" onclick="showToast('Profile updated!','success')"><i class="fas fa-save"></i> Save Changes</button>
+      </div>`;
+  }
+  applyLang();
+}
+
+function generateExamLink(){
+  document.getElementById('examLinkResult').style.display='block';
+  showToast('Exam link created!','success');
+}
+
+// ═══════════════════════════════════════
+//  STUDENT DASHBOARD
+// ═══════════════════════════════════════
+function initStudentDash(){showStudentTab('overview',document.querySelector('#page-student .sidebar-item'));}
+
+function showStudentTab(tab,el){
+  document.querySelectorAll('#page-student .sidebar-item').forEach(i=>i.classList.remove('active'));
+  if(el)el.classList.add('active');
+  const m=document.getElementById('studentMain');
+  if(tab==='overview'){
+    m.innerHTML=`
+      <div class="dash-header"><div class="dash-title">My Dashboard</div><div class="dash-sub">Welcome back, Sadia! Keep up the great work 🎉</div></div>
+      <div class="stat-cards">
+        <div class="stat-card"><div class="stat-num">42</div><div class="stat-label">Exams Taken</div></div>
+        <div class="stat-card"><div class="stat-num">78%</div><div class="stat-label">Average Score</div></div>
+        <div class="stat-card"><div class="stat-num">380</div><div class="stat-label">Questions Practiced</div></div>
+        <div class="stat-card"><div class="stat-num">3</div><div class="stat-label">Courses Enrolled</div></div>
+      </div>
+      <div class="dash-section">
+        <div class="dash-section-title"><i class="fas fa-chart-line"></i> Performance by Subject</div>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          ${[['Physics','82%',82,'#0b2545'],['Chemistry','71%',71,'#c9912a'],['Biology','88%',88,'#1a5c3a'],['Mathematics','65%',65,'#c0392b']].map(([s,p,n,c])=>`
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div style="width:90px;font-size:13px;font-weight:600;color:var(--text);">${s}</div>
+              <div style="flex:1;height:8px;background:var(--border);border-radius:4px;overflow:hidden;"><div style="width:${n}%;height:100%;background:${c};border-radius:4px;transition:width .8s;"></div></div>
+              <div style="width:36px;font-size:13px;font-weight:700;color:${c};">${p}</div>
+            </div>`).join('')}
+        </div>
+      </div>
+      <div class="dash-section">
+        <div class="dash-section-title"><i class="fas fa-history"></i> Recent Exams</div>
+        ${[['HSC Physics Mock #5','Apr 2, 2024','82%','var(--green)'],['Medical Biology Test','Mar 28, 2024','74%','var(--accent)'],['DU Math Practice #2','Mar 25, 2024','68%','var(--red)']].map(([t,d,s,c])=>`
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border-light);">
+            <div><div style="font-size:14px;font-weight:600;color:var(--text);">${t}</div><div style="font-size:12px;color:var(--text-muted);">${d}</div></div>
+            <div style="font-size:18px;font-weight:700;color:${c};">${s}</div>
+          </div>`).join('')}
+      </div>`;
+  }else if(tab==='courses'){
+    m.innerHTML=`
+      <div class="dash-header"><div class="dash-title">My Courses</div></div>
+      <div class="grid-2" style="gap:18px;">
+        ${COURSES.slice(0,3).map(c=>`
+          <div class="course-card">
+            <div class="course-thumb" style="background:${c.color};height:100px;">${c.emoji}</div>
+            <div class="course-body">
+              <span class="course-tag" style="background:var(--accent-soft);color:var(--accent);">${c.level}</span>
+              <div class="course-title">${c.title}</div>
+              <div style="margin-top:10px;height:5px;background:var(--border);border-radius:3px;overflow:hidden;"><div style="width:${Math.floor(Math.random()*70+20)}%;height:100%;background:var(--green);border-radius:3px;"></div></div>
+              <div style="font-size:12px;color:var(--text-muted);margin-top:5px;">In progress</div>
+            </div>
+          </div>`).join('')}
+      </div>`;
+  }else if(tab==='results'){
+    m.innerHTML=`
+      <div class="dash-header"><div class="dash-title">My Results</div></div>
+      <div class="dash-section">
+        ${[['HSC Physics Mock #5','Apr 2','30','25','82%'],['Medical Biology Test','Mar 28','25','18','72%'],['DU Math Practice #2','Mar 25','25','17','68%'],['Engineering Chemistry','Mar 20','20','16','80%'],['HSC English Test','Mar 15','30','27','90%']].map(([t,d,total,correct,pct])=>`
+          <div style="display:flex;align-items:center;gap:16px;padding:12px 0;border-bottom:1px solid var(--border-light);">
+            <div style="flex:1;"><div style="font-size:14px;font-weight:600;color:var(--text);">${t}</div><div style="font-size:12px;color:var(--text-muted);">${d} · ${correct}/${total} correct</div></div>
+            <div style="font-size:18px;font-weight:700;color:${parseInt(pct)>=75?'var(--green)':parseInt(pct)>=60?'var(--accent)':'var(--red)'};">${pct}</div>
+            <button class="btn btn-outline btn-sm" onclick="showToast('Loading review...','')">Review</button>
+          </div>`).join('')}
+      </div>`;
+  }else if(tab==='practice'){
+    m.innerHTML=`
+      <div class="dash-header"><div class="dash-title">Practice</div><div class="dash-sub">Quick access to the question bank and exams.</div></div>
+      <div class="grid-2" style="gap:18px;">
+        <div class="card" onclick="goTo('qbank')" style="cursor:pointer;text-align:center;">
+          <div style="font-size:42px;margin-bottom:12px;">📚</div>
+          <div style="font-size:18px;font-weight:700;color:var(--primary);margin-bottom:6px;">Question Bank</div>
+          <p style="font-size:14px;color:var(--text-muted);">Practice 12,000+ questions with explanations</p>
+        </div>
+        <div class="card" onclick="goTo('exam')" style="cursor:pointer;text-align:center;">
+          <div style="font-size:42px;margin-bottom:12px;">⏱️</div>
+          <div style="font-size:18px;font-weight:700;color:var(--primary);margin-bottom:6px;">Timed Exams</div>
+          <p style="font-size:14px;color:var(--text-muted);">Take a full mock exam with instant results</p>
+        </div>
+      </div>`;
+  }else if(tab==='profile'){
+    m.innerHTML=`
+      <div class="dash-header"><div class="dash-title">My Profile</div></div>
+      <div class="dash-section">
+        <div style="text-align:center;margin-bottom:24px;">
+          <div style="width:80px;height:80px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;margin:0 auto 12px;">SR</div>
+          <div style="font-size:20px;font-weight:700;color:var(--primary);">Sadia Rahman</div>
+          <div style="font-size:13px;color:var(--text-muted);">Student • Dhaka</div>
+        </div>
+        <div class="profile-info-grid">
+          <div class="profile-field"><div class="profile-field-label">Name</div><div class="profile-field-value">Sadia Rahman</div></div>
+          <div class="profile-field"><div class="profile-field-label">Institute</div><div class="profile-field-value">Viqarunnisa Noon School & College</div></div>
+          <div class="profile-field"><div class="profile-field-label">Home District</div><div class="profile-field-value">Dhaka</div></div>
+          <div class="profile-field"><div class="profile-field-label">Phone</div><div class="profile-field-value">+880 1812-345678</div></div>
+        </div>
+        <button class="btn btn-primary" style="margin-top:20px;" onclick="showToast('Profile updated!','success')"><i class="fas fa-save"></i> Save Changes</button>
+      </div>`;
+  }
+  applyLang();
+}
+
+// ═══════════════════════════════════════
+//  INIT
+// ═══════════════════════════════════════
+document.addEventListener('DOMContentLoaded',()=>{
+  renderFeaturedCourses();
+  renderTestimonials();
+  renderQuestions();
+  renderAllCourses();
+});
+</script>
+</body>
+</html>
