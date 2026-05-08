@@ -24,3 +24,17 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 
 console.log("Firebase Connected");
+async function signup(email, password, name) {
+  const user = await createUserWithEmailAndPassword(auth, email, password);
+
+  await setDoc(doc(db, "students", user.user.uid), {
+    name: name,
+    email: email
+  });
+  async function login(email, password) {
+  await signInWithEmailAndPassword(auth, email, password);
+  alert("Login successful");
+}
+
+  alert("Signup successful");
+}
