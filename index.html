@@ -1502,6 +1502,16 @@ function showStudentTab(tab,el){
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
+  const firebaseConfig = {
+  apiKey: "AIzaSyDNH1WfFqLnu83wN_qMB4dG5bn6N4ePf3s",
+  authDomain: "paraffin-47cc7.firebaseapp.com",
+  databaseURL: "https://paraffin-47cc7-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "paraffin-47cc7"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
 // ═══════════════════════════════════════
 //  INIT
 // ═══════════════════════════════════════
