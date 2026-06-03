@@ -1499,8 +1499,10 @@ function showStudentTab(tab,el){
   }
   applyLang();
 }
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+<script 
+src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script 
+src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
 
 <script>
   const firebaseConfig = {
@@ -1510,9 +1512,9 @@ function showStudentTab(tab,el){
   projectId: "paraffin-47cc7"
 };
 
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
-
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
+</script>
 // ═══════════════════════════════════════
 //  INIT
 // ═══════════════════════════════════════
